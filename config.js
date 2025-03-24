@@ -40,7 +40,7 @@ global.repobot = 'https://github.com/CrxstianEscobar/MorchiBot'
 global.grupo = 'https://chat.whatsapp.com/FCS6htvAmlT7nq006lxU4I'
 global.comu = 'https://chat.whatsapp.com/Kn1pPVAO08pFRo7qJnKuh6'
 global.channel = 'https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n'
-global.insta = 'https://www.instagram.com/shadowbot.md'
+global.insta = 'https://www.instagram.com/morchi_yara'
 
 
 global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "543876577197-120363317332020195@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: 'MOONFORCE 乂 TEAM', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
