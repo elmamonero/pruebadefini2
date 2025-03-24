@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
     }
 
     if (args[0] === 'list') {
-        if (total === 0) return conn.reply(m.chat, `*[ ℹ️ ] Este grupo es activo v:*`, m)
+        if (total === 0) return conn.reply(m.chat, `*😻 Este grupo es activo v:*`, m)
 
         const groupName = await conn.getName(m.chat)
         const message = `*${total}/${member.length}* grupo *${groupName}* Lista de inactivos\n${sider.map(v => '  ○ @' + v.replace(/@.+/, '')).join('\n')}`
@@ -43,7 +43,7 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
     }
 
     if (args[0] === 'kick') {
-        if (total === 0) return conn.reply(m.chat, `*[ ℹ️ ] Este grupo es activo v:*`, m)
+        if (total === 0) return conn.reply(m.chat, `*😻 Este grupo es activo v:*`, m)
 
         for (const user of sider) {
             try {
@@ -56,7 +56,7 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
         return conn.reply(m.chat, `*[ ℹ️ ] Eliminado con éxito ${total} miembros inactivos del grupo.*`, m)
     }
 
-    return conn.reply(m.chat, `*[ ℹ️ ] Opción no válida*.\n\n*[ 💡 ] Utilice:*\n\`list\` para ver miembros inactivos\n\`kick\` para eliminarlos.`, m)
+    return conn.reply(m.chat, `*🐱 Opción no válida*.\n\n*💡 Utilice:*\n\`list\` para ver miembros inactivos\n\`kick\` para eliminarlos.`, m)
 }
 
 handler.help = ['inactivos']
