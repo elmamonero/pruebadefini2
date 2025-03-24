@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
 
 const handler = async (m, { conn, args, usedPrefix }) => {
-    if (!args[0]) return conn.reply(m.chat, '*[ ℹ️ ] Ingresa un título de Youtube.*\n\n*[ 💡 ] Ejemplo:* Corazón Serrano - Mix Poco Yo', m);
+    if (!args[0]) return conn.reply(m.chat, '*🐱 Ingresa un título de Youtube.*\n\n*🐈 Ejemplo:* Corazón Serrano - Mix Poco Yo', m);
 
     await m.react('🕓');
     try {
@@ -24,7 +24,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
         await conn.sendMessage(m.chat, {
             image: thumbnail,
             caption: messageText,
-            footer: dev,
+            footer: 'Code by Cristian Escobar',
             contextInfo: {
                 mentionedJid: [m.sender],
                 forwardingScore: 999,
