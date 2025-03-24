@@ -8,40 +8,35 @@ import axios from 'axios'
 import moment from 'moment-timezone' 
 
 global.owner = [
+   ['51906168999', 'Maricielo', true],
    ['51927238856', 'Cristian Escobar', true],
-   ['51965911060', 'Shadow', true],
-   ['51990841568', 'Colaborador', false]
+   ['51990841568', 'Moderador', false],
+   ['51965911060', 'Moderador', false]
 ]
 
 global.creadorbot = [
    ['51927238856', 'Cristian Escobar', true]
 ]
 
-global.mods = ['51990841568', '51965911060']
-global.prems = ['51965911060']
+global.mods = ['51990841568', '51965911060', '51906168999']
+global.prems = ['51965911060', '51906168999']
 
 
-global.packname = 'ShadowUtra'
-global.botname = '(✦◠‿◠)ShadowBot-MD'
-global.wm = '⏤͟͟͞͞⋆⬪࣪ꥈ☕★ ׄ ꒱ Shadow ୭'
-global.author = 'By Criss'
-global.dev = '© Powered by Moon Force Team'
+global.packname = 'Morchiyara Bot'
+global.botname = 'Morchi Bot - MD'
+global.wm = '⏤͟͟͞͞⋆⬪࣪ꥈ🐱 ׄ ꒱ Morchi ୭'
+global.author = 'Powered By Moon Force'
+global.dev = '© Powered by Shadow's Community'
 global.errorm = 'Error: ${error.message}'
-global.nombrebot = 'Shadow Bot - MD'
-global.textbot = `「 SHADOW BOT MD 」`
-global.vs = '3.0.0'
+global.nombrebot = 'MorchiBot - MD'
+global.textbot = `🐱 𝗠𝗢𝗥𝗖𝗛𝗜 𝗕𝗢𝗧 🐱`
+global.vs = '1.0.0'
 
 
-global.imagen1 = fs.readFileSync('./media/menus/Menu.jpg')
-global.imagen2 = fs.readFileSync('./media/menus/Menu2.jpg')
-global.imagen3 = fs.readFileSync('./media/menus/Menu3.jpg')
-global.welcome = fs.readFileSync('./media/welcome.jpg')
-global.adios = fs.readFileSync('./media/adios.jpg')
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')
-global.shadowurl = fs.readFileSync('./media/shadowurl.jpg')
 
 
-global.repobot = 'https://github.com/CrxstianEscobar/ShadowUltra-MD'
+global.repobot = 'https://github.com/CrxstianEscobar/MorchiBot'
 global.grupo = 'https://chat.whatsapp.com/FCS6htvAmlT7nq006lxU4I'
 global.comu = 'https://chat.whatsapp.com/Kn1pPVAO08pFRo7qJnKuh6'
 global.channel = 'https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n'
