@@ -1,5 +1,5 @@
 <h1 align="center">Morchi Bot MD</h1>
- <p align="center">Node-Js.</p>
+ <p align="center">Criss Escobar</p>
 </p>
 
 ![img](https://files.catbox.moe/9xgyvd.jpg)
