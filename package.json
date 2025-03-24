@@ -1,6 +1,6 @@
 {
-"name": "ShadowUltra-MD",
-"version": "3.0.0",
+"name": "MorchiBot",
+"version": "1.0.0",
 "description": "WhatsApp Bot Multi Device",
 "main": "main.js",
 "type": "module",
@@ -18,16 +18,16 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/CrxstianEscobar/ShadowUltra-MD",
+"homepage": "https://github.com/CrxstianEscobar/MorchiBot",
 "author": {
 "name": "Cristian Escobar"
 },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/CrxstianEscobar/ShadowUltra-MD.git"
+"url": "git+https://github.com/CrxstianEscobar/MorchiBot.git"
 },
 "bugs": {
-"url": "https://github.com/CrxstianEscobar/ShadowUltra-MD/issues"
+"url": "https://github.com/CrxstianEscobar/MorchiBot/issues"
 },
 "license": "GPL-3.0-or-later",
 "dependencies": {
