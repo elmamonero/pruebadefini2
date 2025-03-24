@@ -9,8 +9,8 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   } else if (!isNaN(text)) {
     var number = text;
   }
-  if (!text && !m.quoted) return conn.reply(m.chat, `*[ ℹ️ ] Menciona a un usuario para quitar admin.*`, m);
-  if (number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*[ ⚠️ ] El usuario ingresado es incorrecto.*`, m);
+  if (!text && !m.quoted) return conn.reply(m.chat, `*🐱 Menciona a un usuario para quitar admin.*`, m);
+  if (number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `*⚠️ El usuario ingresado es incorrecto.*`, m);
   try {
     if (text) {
       var user = number + '@s.whatsapp.net';
@@ -23,10 +23,10 @@ const handler = async (m, {conn, usedPrefix, text}) => {
   } finally {
     const groupMetadata = await conn.groupMetadata(m.chat);
     if (user === groupMetadata.owner) {
-      return conn.reply(m.chat, `*[ ℹ️ ] No se puede degradar al creador del grupo.*`, m);
+      return conn.reply(m.chat, `*⚠️ No se puede degradar al creador del grupo.*`, m);
     }
     conn.groupParticipantsUpdate(m.chat, [user], 'demote');
-    conn.reply(m.chat, `*[ ✅ ] Usuario Degradado*`, m);
+    conn.reply(m.chat, `*✅ Usuario Degradado*`, m);
   }
 };
 
