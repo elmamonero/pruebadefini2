@@ -7,22 +7,22 @@ const handler = async (m, { conn, command, text, isAdmin, participants }) => {
                         ? m.quoted.sender 
                         : text;
 
-    if (!isAdmin) throw '🍬 *Solo un administrador puede ejecutar este comando*';
-    if (!userId) throw '🍬 *Menciona a la persona que deseas mutear o desmutear*';
+    if (!isAdmin) throw '🙀 *Solo un administrador puede ejecutar este comando*';
+    if (!userId) throw '🐈 *Menciona a la persona que deseas mutear o desmutear*';
 
     const user = global.db.data.users[userId] || {};
     user.mute = user.mute || false;
 
     if (command === 'mute') {
-        if (user.mute) throw '🍭 *Este usuario ya ha sido muteado*';
+        if (user.mute) throw '🐈 *Este usuario ya ha sido muteado*';
         user.mute = true;
-        await conn.reply(m.chat, '🍭 *Este usuario ha sido muteado y sus mensajes serán eliminados*', m);
+        await conn.reply(m.chat, '🐈 *Este usuario ha sido muteado y sus mensajes serán eliminados*', m);
     }
 
     if (command === 'unmute') {
-        if (!user.mute) throw '🍭 *Este usuario no está muteado*';
+        if (!user.mute) throw '🐈 *Este usuario no está muteado*';
         user.mute = false;
-        await conn.reply(m.chat, '🍬 *Este usuario ha sido desmuteado*', m);
+        await conn.reply(m.chat, '🐈 *Este usuario ha sido desmuteado*', m);
     }
 
     // Guardar el estado en la base de datos
