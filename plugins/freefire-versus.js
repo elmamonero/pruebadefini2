@@ -113,7 +113,7 @@ ${iconos.map(icono => `${icono}˚ `).join('\n')}
 
 ${iconos2.map(icono => `${icono}˚ `).join('\n')}
 
-> © Տһᥲძᨣᥕ Ɓᨣƚ Uᥣ𝗍rᥲ `.trim();
+> © Moon Force - Adapted `.trim();
 
     conn.sendMessage(m.chat, { text: message }, { quoted: m });
 };
