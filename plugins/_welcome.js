@@ -1,36 +1,24 @@
-import { WAMessageStubType } from '@whiskeysockets/baileys'
+import {WAMessageStubType} from '@whiskeysockets/baileys'
 import fetch from 'node-fetch'
 
-export async function before(m, { conn, participants, groupMetadata }) {
-  if (!m.messageStubType || !m.isGroup) return true
-
-  let who = m.messageStubParameters[0]
-  let taguser = `@${who.split('@')[0]}`
+export async function before(m, {conn, participants, groupMetadata}) {
+  if (!m.messageStubType || !m.isGroup) return !0;
+  let pp = await conn.profilePictureUrl(m.messageStubParameters[0], 'image').catch(_ => 'https://qu.ax/kgzBh.jpg')
+  let img = await (await fetch(`${pp}`)).buffer()
   let chat = global.db.data.chats[m.chat]
-  let defaultImage = 'https://files.catbox.moe/dgvj76.jpg';
 
-  if (chat.welcome) {
-    let img;
-    try {
-      let pp = await conn.profilePictureUrl(who, 'image');
-      img = await (await fetch(pp)).buffer();
-    } catch {
-      img = await (await fetch(defaultImage)).buffer();
-    }
+  if (chat.bienvenida && m.messageStubType == 27) {
+    let bienvenida = `┌─★ *${botname}* \n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Bienvenido a\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
 
-  const welcomeMessage = global.db.data.chats[m.chat]?.welcomeMessage || 'Bienvenido/a :';
-
-    if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
-    let bienvenida = `𓆩°»｡˚ ∾･⁙･ ღ ➵ ⁘ ➵ ღ ･⁙･∾ ˚ ｡«°𓆪\n❍⌇─➭ *Wᴇʟᴄᴏᴍᴇ ᴛᴏ Gʀᴏᴜᴘ ::*\n๑ ˚ ͙۪۪̥@${m.messageStubParameters[0].split`@`[0]} 👋🏻꒱\n\n┌ *\`ɢʀᴏᴜᴘ::\`*\n  ☕ ᩙᩞ✑ ${groupMetadata.subject}\n└┬ *ɴᴇᴡ ᴍᴇᴍʙᴇʀ*\n    ︱·˚🤍 Disfruta del grupo.\n    └╾ׅ╴ׂꨪ╌╼᪶╾᪶ ۪〫┄ׅ⃯፝֟╌╼᪶֘╾᪶╌ׅꨪ╶۪╼┘\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴏᴏɴ ғᴏʀᴄᴇ ᴛᴇᴀᴍ`
-      await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [who] }, { quoted: fkontak })
-    } else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {
-
-const despMessage = global.db.data.chats[m.chat]?.despMessage || 'Se Fue😹';
-
-     let bye = `𓆩°»｡˚ ∾･⁙･ ღ ➵ ⁘ ➵ ღ ･⁙･∾ ˚ ｡«°𓆪\n❍⌇─➭ *Sᴇᴇ ʏᴏᴜ Lᴀᴛᴇʀ ::*\n๑ ˚ ͙۪۪̥@${m.messageStubParameters[0].split`@`[0]} 🖕🏻꒱\n\n┌ *\`ᴘᴜᴛᴀ ᴇʟɪᴍɪɴᴀᴅᴀ\`*\n└┬ *ᴇx ᴍᴇᴍʙᴇʀ*\n    ︱·˚👻 Ojalá y lo violen los ngros.\n    └╾ׅ╴ׂꨪ╌╼᪶╾᪶ ۪〫┄ׅ⃯፝֟╌╼᪶֘╾᪶╌ׅꨪ╶۪╼┘\n\n> © ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴍᴏᴏɴ ғᴏʀᴄᴇ ᴛᴇᴀᴍ`
-      await conn.sendMessage(m.chat, { image: img, caption: bye, mentions: [who] }, { quoted: fkontak })
-    }
+await conn.sendAi(m.chat, botname, textbot, bienvenida, img, img, canal, estilo)
   }
 
-  return true
-}
+  if (chat.bienvenida && m.messageStubType == 28) {
+    let bye = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+await conn.sendAi(m.chat, botname, textbot, bye, img, img, canal, estilo)
+  }
+
+  if (chat.bienvenida && m.messageStubType == 32) {
+    let kick = `┌─★ *${botname}* \n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑  Se fue\n   │✑ Jamás te quisimos aquí\n   └───────────────┈ ⳹`
+await conn.sendAi(m.chat, botname, textbot, kick, img, img, canal, estilo)
+}}
