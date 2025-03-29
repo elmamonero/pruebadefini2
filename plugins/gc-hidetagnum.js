@@ -3,7 +3,7 @@ const handler = async (m, { conn, args, participants, usedPrefix, command }) => 
     return m.reply(`*🐈 Ingrese algún prefijo de un país.*\n\n*💡 Ejemplo:* ${usedPrefix + command} 54`);
 
   const prefijo = args[0].replace(/[+]/g, '');
-  const mensaje = args.slice(1).join(' ') || '📢 ¡Atención!';
+  const mensaje = args.slice(1).join(' ');
   const textoMensaje = `🐱 *Mensaje:* ${mensaje}`;
 
   const usuariosConPrefijo = participants
