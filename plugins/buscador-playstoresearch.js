@@ -1,11 +1,11 @@
 import gplay from "google-play-scraper";
 let handler = async (m, { conn, text }) => {
   if (!text) {
-    return conn.reply(m.chat, "*[ 🏷️ ] Ingresa el nombre de la app que quieras buscar*", m);
+    return conn.reply(m.chat, "*🐈 Ingresa el nombre de la app que quieras buscar*", m);
   }
   let res = await gplay.search({ term: text });
   if (!res.length) {
-    return conn.reply(m.chat, "*[ 🏷️ ] No se encontraron resultados, intenteb con otra busqueda*", m, rcanal); 
+    return conn.reply(m.chat, "*⚠️ No se encontraron resultados, intenteb con otra busqueda*", m, rcanal); 
   }
   let opt = {
     contextInfo: {
@@ -20,7 +20,7 @@ let handler = async (m, { conn, text }) => {
   res = res.map(
     (v) =>
       `*🏷️ Resultado:* ${v.title}
-       *☕ Desarrollador:* ${v.developer}
+       *🧡 Desarrollador:* ${v.developer}
        *💸 Precio:* ${v.priceText || "Gratis"}
        *📈 Puntuación:* ${v.scoreText || "Sin Puntuación"}
        *⛓️ Link:* ${v.url}`
