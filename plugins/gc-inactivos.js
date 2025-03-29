@@ -26,11 +26,11 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
     }
 
         if (!args[0]) {
-        return conn.reply(m.chat, `*[ ☃️ ] Utilice el comando con opciones:*\n1. \`.fantasmas list\` para etiquetar los miembros inactivos\n2. \`.fantasmas kick\` para expulsar a miembros inactivos`, m)
+        return conn.reply(m.chat, `*🐈 Utilice el comando con opciones:*\n1. \`.fantasmas list\` para etiquetar los miembros inactivos\n2. \`.fantasmas kick\` para expulsar a miembros inactivos`, m)
     }
 
     if (args[0] === 'list') {
-        if (total === 0) return conn.reply(m.chat, `*😻 Este grupo es activo v:*`, m)
+        if (total === 0) return conn.reply(m.chat, `*😻 Este grupo es activo*`, m)
 
         const groupName = await conn.getName(m.chat)
         const message = `*${total}/${member.length}* grupo *${groupName}* Lista de inactivos\n${sider.map(v => '  ○ @' + v.replace(/@.+/, '')).join('\n')}`
@@ -43,7 +43,7 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
     }
 
     if (args[0] === 'kick') {
-        if (total === 0) return conn.reply(m.chat, `*😻 Este grupo es activo v:*`, m)
+        if (total === 0) return conn.reply(m.chat, `*😻 No hay nasesidad de eliminar a nadie, porque este grupo es activo*`, m)
 
         for (const user of sider) {
             try {
@@ -53,7 +53,7 @@ let handler = async (m, { conn, text, args, groupMetadata }) => {
             }
         }
 
-        return conn.reply(m.chat, `*[ ℹ️ ] Eliminado con éxito ${total} miembros inactivos del grupo.*`, m)
+        return conn.reply(m.chat, `*🧡 Eliminado con éxito ${total} miembros inactivos del grupo.*`, m)
     }
 
     return conn.reply(m.chat, `*🐱 Opción no válida*.\n\n*💡 Utilice:*\n\`list\` para ver miembros inactivos\n\`kick\` para eliminarlos.`, m)
