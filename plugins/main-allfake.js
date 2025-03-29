@@ -55,6 +55,11 @@ global.emoji4 = '🙀'
 global.emoji5 = '🐈'
 global.emojis = [emoji, emoji2, emoji3, emoji4, emoji5].getRandom()
 
+//EMOJIS INFORMATIVOS
+global.warn = '⚠️'
+global.mistake = '❌'
+global.info = 'ℹ️'
+
 //MENSAJE DE ESPERA 
 global.wait = '*[ ⏳ ] Aguarde un momento...*';
 
