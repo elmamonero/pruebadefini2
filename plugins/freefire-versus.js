@@ -1,17 +1,17 @@
 const handler = async (m, { text, conn, args, usedPrefix, command }) => {
 
     if (args.length < 2) {  
-        conn.reply(m.chat, `*[ ℹ️ ] Proporciona una hora seguido el país y una modalidad.*
+        conn.reply(m.chat, `*🧡 Proporciona una hora seguido el país y una modalidad.*
 *Usa AR para Argentina y PE para Perú.*
 
-*[ 💡 ] Ejemplo:* .${command} 20 pe Vv2`, m);
+*💡 Ejemplo:* .${command} 20 pe Vv2`, m);
         return;
     }
 
     // Nueva validación para formato de 24 horas
     const horaRegex = /^([01]?[0-9]|2[0-3])(:[0-5][0-9])?$/;  
     if (!horaRegex.test(args[0])) {  
-        conn.reply(m.chat, '*[ ⏰ ] Formato de hora incorrecto.*', m);  
+        conn.reply(m.chat, '*⏰ Formato de hora incorrecto.*', m);  
         return;  
     }  
 
@@ -26,7 +26,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command }) => {
     };  
 
     if (!(pais in diferenciasHorarias)) {  
-        conn.reply(m.chat, '*[ ℹ️ ] País no válido. Usa AR para Argentina, PE para Perú.*', m);  
+        conn.reply(m.chat, '*🧡 País no válido. Usa AR para Argentina, PE para Perú.*', m);  
         return;  
     }  
 
@@ -96,7 +96,7 @@ const handler = async (m, { text, conn, args, usedPrefix, command }) => {
             iconos2 = ['🥯', '🥯'];
             break;
         default:
-            conn.reply(m.chat, '*[ ❌ ] Comando no válido.*', m);
+            conn.reply(m.chat, '*❌ Comando no válido.*', m);
             return;
     }
 
