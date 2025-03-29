@@ -1,7 +1,7 @@
 import yts from 'yt-search'
 
 var handler = async (m, { text, conn, args, command, usedPrefix }) => {
-    if (!text) return conn.reply(m.chat, `*[ 🔎 ] Por favor, ingresa una búsqueda de YouTube.*`, m);
+    if (!text) return conn.reply(m.chat, `*🐈 Por favor, ingresa una búsqueda de YouTube.*`, m);
 
     try {
         conn.reply(m.chat, wait, fkontak, m);
@@ -17,7 +17,7 @@ var handler = async (m, { text, conn, args, command, usedPrefix }) => {
         let teks = tes.map(v => {
             switch (v.type) {
                 case 'video':
-                    return `*「🌷」Resultados de la búsqueda para:*\n<${text}>\n\n☕ *Título:* ${v.title}\n📡 *Canal* ${v.author.name}\n*🕝 Duración:* ${v.timestamp}\n📆 *Subido:* ${v.ago}\n👀 *Vistas:* ${v.views}\n🔗 *Enlace* ${v.url}`;
+                    return `*「🌷」Resultados de la búsqueda para:*\n<${text}>\n\n🧡 *Título:* ${v.title}\n📡 *Canal* ${v.author.name}\n*🕝 Duración:* ${v.timestamp}\n📆 *Subido:* ${v.ago}\n👀 *Vistas:* ${v.views}\n🔗 *Enlace* ${v.url}`;
             }
         }).filter(v => v).join('\n\n*┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n\n');
 
