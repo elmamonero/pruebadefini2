@@ -32,7 +32,7 @@ const handler = async (m, {
 }) => {
     if (!text) {
         return conn.sendMessage(m.chat, {
-            text: '*[ ℹ️ ] Agrega un texto.*',
+            text: '*🧡 Agrega un texto.*',
         }, {
             quoted: m
         });
@@ -66,7 +66,7 @@ const handler = async (m, {
         fs.unlinkSync(outputFilePath);
     } catch (error) {
         return conn.sendMessage(m.chat, {
-            text: `*[ ❌ ] Error en la API.*`,
+            text: `*❌ Error en la API.*`,
         }, {
             quoted: m
         });
