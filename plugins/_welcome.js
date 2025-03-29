@@ -7,7 +7,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
   let who = m.messageStubParameters[0]
   let taguser = `@${who.split('@')[0]}`
   let chat = global.db.data.chats[m.chat]
-  let defaultImage = 'https://files.catbox.moe/dgvj76.jpg';
+  let defaultImage = 'https://files.catbox.moe/8bywlp.jpg';
 
   if (chat.welcome) {
     let img;
@@ -21,13 +21,13 @@ export async function before(m, { conn, participants, groupMetadata }) {
   const welcomeMessage = global.db.data.chats[m.chat]?.welcomeMessage || 'Bienvenido/a :';
 
     if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_ADD) {
-    let bienvenida = `┌─★ 𝐒𝐡𝐚𝐝𝐨𝐰 𝐔𝐥𝐭𝐫𝐚\n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑ ${welcomeMessage}\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹\n> ${dev}`
+    let bienvenida = `┌─★ *Morchi Bot*\n│「 Bienvenido 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑ ${welcomeMessage}\n   │✑  ${groupMetadata.subject}\n   └───────────────┈ ⳹`
       await conn.sendMessage(m.chat, { image: img, caption: bienvenida, mentions: [who] }, { quoted: estilo })
     } else if (m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_REMOVE || m.messageStubType === WAMessageStubType.GROUP_PARTICIPANT_LEAVE) {
 
 const despMessage = global.db.data.chats[m.chat]?.despMessage || 'Se Fue😹';
 
-     let bye = `┌─★ 𝐒𝐡𝐚𝐝𝐨𝐰 𝐔𝐥𝐭𝐫𝐚\n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑ ${despMessage}\n   │✑ Ojalá lo violen xD\n   └───────────────┈ ⳹\n> ${dev}`
+     let bye = `┌─★ *Morchi Bot*\n│「 ADIOS 👋 」\n└┬★ 「 @${m.messageStubParameters[0].split`@`[0]} 」\n   │✑ ${despMessage}\n   │✑ Ojalá lo violen xD\n   └───────────────┈ ⳹`
       await conn.sendMessage(m.chat, { image: img, caption: bye, mentions: [who] }, { quoted: estilo })
     }
   }
