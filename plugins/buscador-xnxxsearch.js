@@ -2,10 +2,10 @@ import fetch from "node-fetch"
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!db.data.chats[m.chat].nsfw && m.isGroup) {
-    return m.reply('*[ ℹ️ ] El contenido `+18` está desactivado para este chat.*\n> ᥙsᥱ *enable nsfw* ⍴ᥲrᥲ ᥲᥴ𝗍і᥎ᥲrᥣ᥆.');
+    return m.reply('*🧡 El contenido nsfw está desactivado para este chat.*\n> ᥙsᥱ *enable nsfw* ⍴ᥲrᥲ ᥲᥴ𝗍і᥎ᥲrᥣ᥆.');
     }
 
-  if (!text) throw m.reply(`*[ 🔎 ] Ingresa el texto de lo que quieres buscar en Xnxx*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} Con mi Prima.`)
+  if (!text) throw m.reply(`*🐈 Ingresa el texto de lo que quieres buscar en Xnxx*`)
   let response = await fetch(`https://api.agatz.xyz/api/xnxx?message=${text}`)
   let res = await response.json()
 
@@ -18,14 +18,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     resultText += hasil + '\n'
   }
 
-  await conn.reply(m.chat, '*[ ⏳ ] Espere un momento...*', m)
+  await conn.reply(m.chat, '*⏳ Espere un momento...*', m)
 
   conn.sendMessage(m.chat, {
     text: resultText,
     contextInfo: {
       externalAdReply: {
         title: `Xnxx Videos`,
-        body: `Shadow Ultra`,
+        body: `Morchi Bot`,
         thumbnailUrl: "https://pomf2.lain.la/f/kro5qrjk.jpg",
         sourceUrl: "https://xxnx.com",
         mediaType: 1,
