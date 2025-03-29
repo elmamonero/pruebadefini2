@@ -7,7 +7,7 @@ let vid = 'https://dark-core-api.vercel.app/api/random/anime-random-hot?key=dk-v
 
 conn.sendMessage(m.chat, { 
         video: { url: vid }, 
-        caption: '🍒 ¡Disfruta Del Video!', 
+        caption: '😼 ¡Disfruta Del Video!', 
         footer: dev, 
         buttons: [
             {
