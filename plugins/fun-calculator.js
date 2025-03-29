@@ -1,5 +1,5 @@
 const handler = async (m, { conn, command, text }) => {
-  if (!text) return conn.reply(m.chat, `*[ ℹ️ ] Menciona algún usuario.*`, m);
+  if (!text) return conn.reply(m.chat, `*🐈  Menciona al usuario.*`, m);
 
   const percentages = Math.floor(Math.random() * 501);
   const emojis = {
