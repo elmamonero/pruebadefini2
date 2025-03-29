@@ -7,7 +7,7 @@ const handler = async (m, { conn, args, command, usedPrefix, text }) => {
   if (!db.data.chats[m.chat].nsfw && m.isGroup) throw `*Modo Horny #enable nsfw*`;
 
   if (!args[0]) {
-  return conn.reply(m.chat, `*[ ℹ️ ] Por favor, proporciona un enlace de XVideos.*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} https://www.xvideos.com/video70389849/pequena_zorra_follada_duro`, m);
+  return conn.reply(m.chat, `*🐈 Por favor, proporciona un enlace de XVideos.*\n\n*💡 Ejemplo:* ${usedPrefix + command} https://www.xvideos.com/video70389849/pequena_zorra_follada_duro`, m);
 }
 
   try {
@@ -15,7 +15,7 @@ const handler = async (m, { conn, args, command, usedPrefix, text }) => {
     const res = await xvideosdl(args[0]);
     conn.sendMessage(m.chat, { document: { url: res.result.url }, mimetype: 'video/mp4', fileName: res.result.title }, { quoted: m });
   } catch (e) {
-    throw `*[ ℹ️ ] Error, Proporciona un enlace correcto de XVideos.*`;
+    throw `*🐱 Error, Proporciona un enlace correcto de XVideos.*`;
   }
 };
 handler.command = /^(xvideosdl|xvdl)$/i;
