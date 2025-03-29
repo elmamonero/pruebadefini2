@@ -12,8 +12,7 @@ description = description || 'Sin descripción';
 
 let username = conn.getName(who)
 let noprem = `
-ˏˋ───･ ｡ﾟ☆: *.☽.* :☆ﾟ｡ ･───ˊˎ
-ㅤㅤ *\`𝐏𝐄𝐑𝐅𝐈𝐋 𝐃𝐄𝐋 𝐔𝐒𝐔𝐀𝐑𝐈𝐎\`*
+*_PERFIL DEL USUARIO_*
 
 👤 *Nombre:* ${username}
 🏷️ *Tag:* @${who.replace(/@.+/, '')}
@@ -22,15 +21,14 @@ let noprem = `
 🪪 *Premium:* ${premium ? '✅': '❌'}
 📝 *Descripción:* ${description}
 
+*_RECURSOS OBTENIDOS_*
 
-╭─• *\`𝐑𝐄𝐂𝐔𝐑𝐒𝐎𝐒\`*
-│ *💎 Diamantes* ${diamantes || 0}
-│ *🆙 Nivel:* ${level || 0}
-│ *💫 Exᴘ* ${exp || 0}
-│ *🤍 Rango:* ${role}
-╰─────────────•
+*💎 Diamantes* ${diamantes || 0}
+*🆙 Nivel:* ${level || 0}
+*💫 Exᴘ* ${exp || 0}
+*🐈 Rango:* ${role}
 
-> By Shadow Bot MD
+> By MorchiyaraBot
 `.trim()
 let prem = `╭─⪩ 𓆩 𝐔𝐒𝐔𝐀𝐑𝐈𝐎 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𓆪
 │⧼👤⧽ *Usᴜᴀʀɪᴏ:* ${username}
