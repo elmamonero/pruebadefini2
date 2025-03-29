@@ -3,12 +3,12 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
         if (!text) {
-            throw `*[ 📂 ] Ingresa un link de MediaFire.*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix}${command} https://www.mediafire.com/file/2v2x1p0x58qomva/WhatsApp_Messenger_2.24.21.8_beta_By_WhatsApp_LLC.apk/file`;
+            throw `*🐈 Ingresa un link de MediaFire.*`;
         }
 
         // Validación de enlace de MediaFire
         if (!/^https?:\/\/(www\.)?mediafire\.com\/file\/[a-zA-Z0-9]+\/.+$/.test(text)) {
-            throw `*[ ❌ ] El enlace proporcionado no es válido. Asegúrate de que sea un link de MediaFire.*`;
+            throw `*❌ El enlace proporcionado no es válido. Asegúrate de que sea un link de MediaFire.*`;
         }
 
         await conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
@@ -22,10 +22,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
         // Obtener los datos del archivo desde la API
         let response = await fetchWithTimeout(`https://api.agatz.xyz/api/mediafire?url=${text}`);
-        if (!response.ok) throw `*[ ❌ ] Error al obtener datos. Intenta nuevamente más tarde.*`;
+        if (!response.ok) throw `*❌ Error al obtener datos. Intenta nuevamente más tarde.*`;
 
         let data = await response.json();
-        if (!data || !data.data || data.data.length === 0) throw `*[ ❌ ] No se pudo obtener información del archivo. Verifica el enlace.*`;
+        if (!data || !data.data || data.data.length === 0) throw `*❌ No se pudo obtener información del archivo. Verifica el enlace.*`;
 
         // Iteramos sobre todos los archivos
         for (let file of data.data) {
