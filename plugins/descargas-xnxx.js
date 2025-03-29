@@ -5,13 +5,13 @@ import cheerio from 'cheerio';
 const handler = async (m, {conn, args, command, usedPrefix}) => {
   const datas = global
 if (!db.data.chats[m.chat].nsfw && m.isGroup) {
-    return m.reply('*[ ℹ️ ] El contenido `+18` está desactivado para este chat.*\n> ᥙsᥱ *enable nsfw* ⍴ᥲrᥲ ᥲᥴ𝗍і᥎ᥲrᥣ᥆.');
+    return m.reply('🧡 El contenido nsfw está desactivado para este chat.*\n> ᥙsᥱ *enable nsfw* ⍴ᥲrᥲ ᥲᥴ𝗍і᥎ᥲrᥣ᥆.');
     }
   if (!args[0]) {
-    return m.reply(`*[ 🔗 ] Ingrese un enlace válido de Xnxx.*\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} https://www.xnxx.com/video-14lcwbe8/rubia_novia_follada_en_cuarto_de_bano*`);
+    return m.reply(`*🐈 Ingrese un enlace válido de Xnxx.*\n*💡 Ejemplo:* ${usedPrefix + command} https://www.xnxx.com/video-14lcwbe8/rubia_novia_follada_en_cuarto_de_bano*`);
 }
   try {
-    await conn.reply(m.chat, '*[ ⏳ ] Se está enviando el vídeo, espere un momento', m, rcanal);
+    await conn.reply(m.chat, '*Se está enviando el vídeo, espere un momento', m, rcanal);
     let xnxxLink = '';
     if (args[0].includes('xnxx')) {
       xnxxLink = args[0];
