@@ -15,7 +15,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 \`\`\`📩MENSAJE\`\`\`
 > ${text}`;
 
-        const ownerJid = global.owner[0][0] + '@s.whatsapp.net';
+        const ownerJid = global.creadorbot[0][0] + '@s.whatsapp.net';
         await conn.reply(ownerJid, m.quoted ? `${teks}\n\n📎 *Mensaje citado:* ${m.quoted.text}` : teks, m, {
             mentions: conn.parseMention(teks),
         });
