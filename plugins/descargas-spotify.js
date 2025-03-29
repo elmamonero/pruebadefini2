@@ -8,7 +8,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) {
     return conn.reply(
       m.chat,
-      '[ ᰔᩚ ] Ingresa el nombre o enlace para buscar en *Spotify*.\n\n' + 
+      '🐈 Ingresa el nombre o enlace para buscar en *Spotify*.\n\n' + 
       `Ejemplo:\n> *${usedPrefix + command}* https://open.spotify.com/track/123456789`,
       m
     );
@@ -43,7 +43,7 @@ await conn.sendMessage(m.chat, { audio: { url: downloadLink }, mimetype: 'audio/
       await m.react('❌');
       conn.reply(
         m.chat,
-        '[ ᰔᩚ ] No se pudo obtener la música para este enlace o búsqueda.',
+        '🐱 No se pudo obtener la música para este enlace o búsqueda.',
         m
       );
     }
