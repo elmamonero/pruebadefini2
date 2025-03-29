@@ -96,7 +96,7 @@ gay: '🏳️‍🌈', lesbiana: '🏳️‍🌈', pajero: '😏💦', pajera: '
 
   const cal = `*\`🤍 CALCULADORA 🤍\`*
 
-🌿 *Los cálculos han arrojado que* \`${text.toUpperCase()}\` es \`${percentages}%\` ${command} ${emoji}*
+🐈 *Los cálculos han arrojado que* \`${text.toUpperCase()}\` es \`${percentages}%\` ${command} ${emoji}*
 
 • *${description}*
 > *${response}*`.trim();
@@ -110,7 +110,7 @@ gay: '🏳️‍🌈', lesbiana: '🏳️‍🌈', pajero: '😏💦', pajera: '
       "《 ████████████》100%"
     ];
 
-    let { key } = await conn.sendMessage(m.chat, { text: `*☕ ¡Calculando Porcentaje!*`, mentions: conn.parseMention(cal) });
+    let { key } = await conn.sendMessage(m.chat, { text: `*🧡 ¡Calculando Porcentaje!*`, mentions: conn.parseMention(cal) });
 
     for (let i = 0; i < hawemod.length; i++) {
       await new Promise(resolve => setTimeout(resolve, 1000));
