@@ -21,7 +21,7 @@ m.chat, `*[ 🎁 ] Ya Reclamastes Tu Cofre*\nRegresa en \`${msToTime(time - new 
 ┃ ${saludo}
 ╰━━━━━━━━━━━━⬣
 
-╭━〔 ${global.botname} 〕⬣
+╭━〔 ${botname} 〕⬣
 ┃ *${dia} Diamantes* 💎
 ┃ *${tok} Tokens* 💰
 ┃ *${ai} Coins* 🪙
