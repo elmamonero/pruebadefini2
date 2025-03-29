@@ -38,7 +38,7 @@ if (!stiker) stiker = e
 } finally {
 if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: botname, body: `Morchi Bot MD`, mediaType: 2, sourceUrl: grupo, thumbnail: icons}}}, { quoted: m })
 
-else return conn.reply(m.chat, `*🐈 La conversión ah fallado, responde a un vídeo, imagen o gif lo cual será convertido en sticker.*`, m, rcanal)
+else return conn.reply(m.chat, `*${emoji2} La conversión ah fallado, responde a un vídeo, imagen o gif lo cual será convertido en sticker.*`, m, rcanal)
 
 
 }}
