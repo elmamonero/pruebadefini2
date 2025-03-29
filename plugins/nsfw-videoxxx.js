@@ -7,7 +7,7 @@ let rvid = global.vidxxx[Math.floor(Math.random() * global.vidxxx.length)];
 
 conn.sendMessage(m.chat, { 
         video: { url: rvid }, 
-        caption: '🍒 ¡Disfruta Del Video!', 
+        caption: '😼 ¡Disfruta Del Video!', 
         footer: dev, 
         buttons: [
             {
