@@ -4,13 +4,13 @@ import Jimp from "jimp"
 let handler = async (m, { conn, usedPrefix, command }) => {
   conn.hdr = conn.hdr ? conn.hdr : {}
   if (m.sender in conn.hdr)
-    throw m.reply("✧ Aún hay procesos en el chat >//<");
+    throw m.reply("🤌🏻 Aún hay procesos en el chat >//<");
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || q.mediaType || ""
   if (!mime)
-    throw m.reply(`*[ ℹ️ ] Etiqueta una Imagen.*`)
+    throw m.reply(`*🐈 Etiqueta una Imagen.*`)
   if (!/image\/(jpe?g|png)/.test(mime))
-    throw m.reply(`*[ ℹ️ ] Etiqueta una Imagen.*`);
+    throw m.reply(`*🐈 Etiqueta una Imagen.*`);
   else conn.hdr[m.sender] = true;
   m.reply("*Mejorando la calidad de imagen...*")
   let img = await q.download?.()
@@ -31,7 +31,6 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['hd *<img>*', 'remini *<img>*']
 handler.tags = ['herramientas']
 handler.command = /^(hd|remini)$/i
-handler.register = true
 
 export default handler
 
