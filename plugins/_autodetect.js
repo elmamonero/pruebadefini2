@@ -8,19 +8,19 @@ let usuario = `@${m.sender.split`@`[0]}`
 let pp = await conn.profilePictureUrl(m.chat, 'image').catch(_ => null) || 'https://files.catbox.moe/xr2m6u.jpg'  
 
 let nombre, foto, edit, newlink, status, admingp, noadmingp, aceptar
-nombre = `*${usuario}*\n*Ha cambiado el nombre del grupo.*\n\n*🧃 Ahora el grupo se llama:*\n> *${m.messageStubParameters[0]}*.`
+nombre = `*_🐈 ${usuario} HA CAMBIADO EL NOMBRE DEL GRUPO_*.`
 
-foto = `*${usuario}*\n*Ha cambiado la imagen del grupo.*`
+foto = `*🐈 _${usuario} HA CAMBIADO LA IMAGEN DEL GRUPO._*`
 
-edit = `*${usuario}*\n*Ha permitido que ${m.messageStubParameters[0] == 'on' ? 'solo admins' : 'todos'} puedan configurar el grupo.*`
+edit = `*${usuario}*\n*_AH PERMITIDO QUE ${m.messageStubParameters[0] == 'on' ? 'SOLO ADMINS' : 'TODOS'} PUEDAN CONFIGURAR EL GRUPO_*`
 
-newlink = `*⛓️‍💥 El enlace del grupo ha sido restablecido por:*\n*${usuario}*`
+newlink = `*El enlace del grupo ha sido restablecido*`
 
-status = `*☕ El grupo ha sido ${m.messageStubParameters[0] == 'on' ? '`cerrado` 🔒' : '`abierto` 🔓'}*\n*Por: ${usuario}*\n\n🌷 Ahora ${m.messageStubParameters[0] == 'on' ? '*solo admins*' : '*todos*'} pueden enviar mensaje...`
+status = `*_😸 EL GRUPO AH SIDO ${m.messageStubParameters[0] == 'on' ? 'CERRADO 🔒' : '`ABIERTO 🔓'}_*\n*_POR ${usuario}_*\n\n*_🧡 AHORA ${m.messageStubParameters[0] == 'on' ? 'SOLO ADMINS' : 'TODOS'} PUEDEN ENVIAR MENSAJE_*`
 
-admingp = `*@${m.messageStubParameters[0].split`@`[0]} Ahora es admin del grupo. 👻*\n\n*☕ Acción hecha por:*\n*${usuario}*`
+admingp = `*😸 @${m.messageStubParameters[0].split`@`[0]} Ahora es admin del grupo*`
 
-noadmingp =  `*@${m.messageStubParameters[0].split`@`[0]} Deja de ser admin del grupo. 🥱*\n\n*☕ Acción hecha por:*\n*${usuario}*`
+noadmingp =  `*🐱 @${m.messageStubParameters[0].split`@`[0]} Deja de ser admin en este grupo*`
 
 aceptar = `*¡Ha llegado un nuevo participante al grupo!*\n\n◦ ✐ Grupo: *${groupMetadata.subject}*\n\n> ◦ ⚘ Bienvenido/a: @${m.messageStubParameters[0].split('@')[0]}\n\n> ◦ ✦ Aceptado por:
  @${m.sender.split('@')[0]}` 
