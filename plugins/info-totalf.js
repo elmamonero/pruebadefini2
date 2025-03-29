@@ -14,9 +14,9 @@ const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
   }, 0);
 
   conn.sendMessage(m.chat, {
-text: `*[ ℹ️ ] ¡El poder está en tus manos!*\n*Bienvenido ${taguser}*\n\n*Este bot cuenta con \`${totalf}\` comandos disponibles para ti. ¿Tienes alguna sugerencia para mejorar nuestra experiencia? ¡Usa el comando \`.sugerir\` para saber que idea tienes!*\n\n> © Տһᥲძᨣᥕ Ɓᨣƚ Uᥣ𝗍rᥲ`,
+text: `*🧡 ¡El poder está en tus manos!*\n*Bienvenido ${taguser}*\n\n*Este bot cuenta con \`${totalf}\` comandos disponibles para ti. ¿Tienes alguna sugerencia para mejorar nuestra experiencia? ¡Usa el comando \`.sugerir\` para saber que idea tienes!*\n\n> © MorchiBot - MD`,
 mentions: [m.sender]
 }, { quoted: fkontak });
 };
-handler.command = ['totalcomandos', 'comandostotales', 'totalf'];
+handler.command = ['totalcomandos', 'comandostotales', 'totalf', 'totalfunciones'];
 export default handler;
