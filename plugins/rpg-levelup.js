@@ -9,14 +9,14 @@ const handler = async (m, { conn }) => {
   if (!canLevelUp(user.level, user.exp, global.multiplier)) {
     const { min, xp, max } = xpRange(user.level, global.multiplier);
     const message = `
-*[ 🏰 ] Gremio de Aventureros*
+*🏰 Gremio de Aventureros*
 *¡Bienvenido, ${usertag}!*
 
 - *Nivel actual:* ${user.level}
 - *Rango actual:* ${user.role}
 - *Puntos de Exp:* ${user.exp - min}/${xp}
 
-> ⍴ᥲrᥲ ᥲsᥴᥱᥒძᥱr ძᥱ ᥒі᥎ᥱᥣ ᥒᥱᥴᥱsі𝗍ᥲs ᥆ᑲ𝗍ᥱᥒᥱs \`${max - user.exp}\` ⍴ᥙᥒ𝗍᥆s ძᥱ ᥱ᥊⍴ᥱrіᥱᥒᥴіᥲ mᥲ́s. ¡sіgᥙᥱ іᥒ𝗍ᥱrᥲᥴ𝗍ᥙᥲᥒძ᥆ ᥴ᥆ᥒ ᥱᥣ ᑲ᥆𝗍!`.trim();
+> Para ascender de nivel nesesitas obtener *${max - user.exp}* puntos de exp más.`.trim();
     return conn.sendMessage(m.chat, {text: message, mentions: [m.sender]}, {quoted: m});
   }
 /*
@@ -48,13 +48,13 @@ if (user.level >= MAX_LEVEL) {
 
   if (before !== user.level) {
     const levelUpMessage = `🎉 ¡Felicidades, ${name}! Has subido de nivel a ${user.level}`;
-    const levelUpDetails = `*[ 🚀 ] Nuevo Nivel Alcanzado*
+    const levelUpDetails = `*🚀 Nuevo Nivel Alcanzado*
 
 - *Nivel anterior:* ${before}
 - *Nuevo nivel:* ${user.level}
 - *Rango actual:* ${user.role}
 
-> ᥴ᥆ᥒ𝗍іᥒᥙ́ᥲ ᥱ᥊⍴ᥣ᥆rᥲᥒძ᥆ ᥡ rᥱᥲᥣіzᥲᥒძ᥆ mіsі᥆ᥒᥱs ⍴ᥲrᥲ ᥲᥣᥴᥲᥒzᥲr ᥒᥙᥱ᥎ᥲs ᥲᥣ𝗍ᥙrᥲs ᥱᥒ ᥱᥣ grᥱmі᥆ ძᥱ ᥲ᥎ᥱᥒ𝗍ᥙrᥱr᥆s. ¡sіgᥙᥱ іᥒ𝗍ᥱrᥲᥴ𝗍ᥙᥲᥒძ᥆ ᥴ᥆ᥒ ᥱᥣ ᑲ᥆𝗍!.`.trim();
+> Sigue interactuando con *MorchiBot*`.trim();
     try {
       const levelUpImage = await levelup(levelUpMessage, user.level);
       conn.sendFile(m.chat, levelUpImage, 'Menu.jpg', levelUpDetails, m);
