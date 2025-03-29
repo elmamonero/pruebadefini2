@@ -1,7 +1,7 @@
 
 const handler = async (m, { conn }) => {
     const user = global.db.data.users[m.sender];
-        conn.sendMessage(m.chat, {text: `*[ ℹ️ ] @${m.sender.split('@')[0]} Ahora tienes recursos ilimitados*`, mentions: [m.sender]}, {quoted: fkontak});
+        conn.sendMessage(m.chat, {text: `*🐈 @${m.sender.split('@')[0]} Ahora tienes recursos ilimitados*`, mentions: [m.sender]}, {quoted: fkontak});
       global.db.data.users[m.sender].money = Infinity;
     global.db.data.users[m.sender].diamantes = Infinity;
   global.db.data.users[m.sender].level = Infinity;
