@@ -2,8 +2,10 @@ import fetch from 'node-fetch';
 
 const handler = async (m, { conn, isPrems }) => {
   try {
-    let img = 'https://files.catbox.moe/rh2b7r.jpg'; // URL de la imagen
-    let insta = 'https://instagram.com/usxr.crxxs'; // Enlace de referencia
+    await m.react('🧡');
+
+    let img = 'https://files.catbox.moe/rh2b7r.jpg';
+    let insta = 'https://instagram.com/usxr.crxxs';
 
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
@@ -24,8 +26,8 @@ const handler = async (m, { conn, isPrems }) => {
         isForwarded: true,
         forwardingScore: 999,
         externalAdReply: {
-          title: `${await conn.getName(m.sender)}, ¡Usa Morchi Bot!`,
-          body: 'By Cristian Escobar',
+          title: `${await conn.getName(m.sender)}, Thank for using Morchiyara, you can follow me on Instagram?`,
+          body: 'I'm Dev Criss',
           thumbnail: await (await fetch(img)).buffer(),
           sourceUrl: insta,
           mediaType: 1,
