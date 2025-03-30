@@ -61,7 +61,7 @@ ${readMore}
 ⠞🪷੭‎ ${usedPrefix}apk *texto*
 ⠞🪷੭‎ ${usedPrefix}pinterest *texto*
 ⠞🪷੭‎ ${usedPrefix}pinvid *url*
-⠞🪷੭‎ ${usedPrefix}ytmp4 *url*
+⠞🪷੭‎ ${usedPrefix}ytv *url*
 ⠞🪷੭‎ ${usedPrefix}ytmp3 *url*
 ⠞🪷੭‎ ${usedPrefix}tiktok *url*
 ⠞🪷੭‎ ${usedPrefix}instagram *url*
@@ -207,7 +207,6 @@ ${readMore}
 ⠞🎋੭‎ ${usedPrefix}ptt *opción*
 ⠞🎋੭‎ ${usedPrefix}delttt
 ⠞🎋੭‎ ${usedPrefix}acertijo
-⠞🎋੭‎ ${usedPrefix}trivia
 
 ↷✦; \`ANIME\` ❞ 🌾︵᷼ 
 ⠞🌾੭‎ ${usedPrefix}messi
