@@ -1,11 +1,12 @@
-/*import fs from 'fs'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-import { promises } from 'fs'
-import { join } from 'path'
+import fetch from 'node-fetch';
 
-let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, command }) => {
-    try {
+const handler = async (m, { conn, isPrems }) => {
+  try {
+    await m.react('🧡');
+
+    let img = 'https://files.catbox.moe/rh2b7r.jpg';
+    let insta = 'https://instagram.com/usxr.crxxs';
+
     let { exp, diamantes, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
@@ -18,13 +19,9 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, com
     let totalreg = Object.keys(global.db.data.users).length
     let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
 
-        await m.react('🍪')
-        let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-        let perfil = await conn.profilePictureUrl(who, 'image').catch(_ => 'https://files.catbox.moe/pk3xxk.jpg')
+    const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
-        const videoUrl = 'https://files.catbox.moe/7ha109.mp4' // URL fija del video
-
-        let menu = `
+    const text = `
 ︵᷼     ⿻ *Morchi* ࣪   ࣭  ࣪ *WA* ࣭  🐈  ࣪   ࣭ 
 ✧ *Hola ${taguser}*\n${saludo}
 
@@ -267,29 +264,30 @@ ${readmore}
 ⠞👑੭ ${usedPrefix}join
 ⠞👑੭ ${usedPrefix}chetar
 ⠞👑੭ ${usedPrefix}unbanuser
-`.trim()
 
-        await conn.sendMessage(m.chat, {
-            video: { url: videoUrl }, // Video fijo
-            caption: menu,
-            contextInfo: {
-                mentionedJid: [m.sender],
-                isForwarded: true,
-                forwardingScore: 999,
-                externalAdReply: {
-                    title: '⏤͟͞ू⃪ ፝͜⁞Sʜᴀᴅᴏᴡ✰⃔࿐\nNᴜᴇᴠᴀ Vᴇʀsɪᴏɴ Uʟᴛʀᴀ 💫',
-                    thumbnailUrl: perfil,
-                    mediaType: 1,
-                    renderLargerThumbnail: false,
-                },
-            },
-            gifPlayback: true,
-            gifAttribution: 0
-        }, { quoted: null })
-    } catch (e) {
-        await m.reply(`*[ ℹ️ ] Ocurrió un error al enviar el menú.*\n\n${e}`)
-    }
-}
+`.trim();
+
+    conn.sendMessage(m.chat, {
+      text: text,
+      contextInfo: {
+        mentionedJid: conn.parseMention(text),
+        isForwarded: true,
+        forwardingScore: 999,
+        externalAdReply: {
+          title: `${await conn.getName(m.sender)}, Thank for using Morchiyara, you can follow me on Instagram by clicking here`,
+          body: 'Im Dev Criss',
+          thumbnail: await (await fetch(img)).buffer(),
+          sourceUrl: insta,
+          mediaType: 1,
+          renderLargerThumbnail: true
+        }
+      }
+    }, { quoted: fkontak });
+
+  } catch (e) {
+    conn.reply(m.chat, '❎ Error en el comando. Inténtalo más tarde.', m);
+  }
+};
 
 handler.help = ['menuff'];
 handler.tags = ['main'];
@@ -298,11 +296,9 @@ handler.fail = null;
 
 export default handler;
 
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
 function clockString(ms) {
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}*/
+  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
+  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+  return [h, m, s].map((v) => v.toString().padStart(2, 0)).join(':');
+}
