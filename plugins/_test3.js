@@ -34,7 +34,7 @@ const handler = async (m, { conn, isPrems }) => {
           renderLargerThumbnail: true
         }
       }
-    }, { quoted: fkontak });
+    }, { quoted: m });
 
   } catch (e) {
     conn.reply(m.chat, '❎ Error en el comando. Inténtalo más tarde.', m);
