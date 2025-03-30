@@ -32,9 +32,9 @@ const handler = async (m, { conn, isPrems }) => {
 *𓈒𓏸🍃 \`Usuarios:\`* ${totalreg}
 *𓈒𓏸🌿 \`Version:\`* ${version}
 
-*✪ `Platform:`* Linux
-*✪ `Baileys:`* Multi-Device
-*✪ `Prefix`* [ . ]
+*✪ \`Platform:\`* Linux
+*✪ \`Baileys:\`* Multi-Device
+*✪ \`Prefix\`* [ . ]
 
 > 😸 Si encuentra un comando con errores no dudes en reportarlo con el *Creador*
 ${readmore}
