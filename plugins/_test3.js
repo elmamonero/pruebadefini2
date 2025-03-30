@@ -26,7 +26,7 @@ const handler = async (m, { conn, isPrems }) => {
         isForwarded: true,
         forwardingScore: 999,
         externalAdReply: {
-          title: `${await conn.getName(m.sender)}, Thank for using Morchiyara, you can follow me on Instagram?`,
+          title: `${await conn.getName(m.sender)}, Thank for using Morchiyara, you can follow me on Instagram by clicking here`,
           body: 'I'm Dev Criss',
           thumbnail: await (await fetch(img)).buffer(),
           sourceUrl: insta,
@@ -34,7 +34,7 @@ const handler = async (m, { conn, isPrems }) => {
           renderLargerThumbnail: true
         }
       }
-    }, { quoted: m });
+    }, { quoted: fkontak });
 
   } catch (e) {
     conn.reply(m.chat, '❎ Error en el comando. Inténtalo más tarde.', m);
