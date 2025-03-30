@@ -11,13 +11,7 @@ const handler = async (m, { conn, isPrems }) => {
     let img = 'https://files.catbox.moe/rh2b7r.jpg';
     let insta = 'https://instagram.com/usxr.crxxs';
 
-    let { exp, diamantes, level, role } = global.db.data.users[m.sender]
-    let { min, xp, max } = xpRange(level, global.multiplier)
-    let name = await conn.getName(m.sender)
-    exp = exp || 'Desconocida';
-    role = role || 'Aldeano';
-
-        const _uptime = process.uptime() * 1000;
+    const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
 
     let totalreg = Object.keys(global.db.data.users).length
@@ -41,7 +35,7 @@ const handler = async (m, { conn, isPrems }) => {
 *✪ \`Prefix\`* [ . ]
 
 > 😸 Si encuentra un comando con errores no dudes en reportarlo con el *Creador*
-${readmore}
+
 ↷✦; \`MENÚS\` ❞ 🌷︵᷼  
 ⠞🌷੭‎ ${usedPrefix}menunsfw
 ⠞🌷੭‎ ${usedPrefix}menuowner
