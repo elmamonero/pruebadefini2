@@ -20,7 +20,7 @@ const handler = async (m, { conn, usedPrefix, isPrems }) => {
 
     const text = `
 ︵᷼     ⿻ *Mᴏʀᴄʜɪ* ࣪   ࣭  ࣪ *WA BOT* ࣭  🐈  ࣪   ࣭
-✿ *Hᴏʟᴀ ${taguser}*\n${saludo}
+✿ *Hᴏʟᴀ ${taguser}*\n*${saludo}*
 
 > ꒰꛱ ͜Desarrollado por *Cristian Escobar* +51927238856
 
