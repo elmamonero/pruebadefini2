@@ -25,167 +25,136 @@ let handler = async (m, { conn, usedPrefix, usedPrefix: _p, __dirname, text, com
         const videoUrl = 'https://files.catbox.moe/7ha109.mp4' // URL fija del video
 
         let menu = `
-ㅤㅤㅤ⩁꯭ ͡  ͡ᩚ꯭ ꯭⩁ㅤㅤ𑁯🤍ᰍㅤㅤ⩁꯭ ͡  ͡ᩚ꯭ ꯭⩁
-೯ ׅ 👤 ¡Hᴏʟᴀ! ¿Cᴏᴍᴏ Esᴛᴀ́s? ׄ ᦡᦡ
-ㅤ꒰͜͡${taguser}
-ㅤㅤ♡𑂳ᩙㅤ ּ ${saludo} ׄ ㅤタス
+︵᷼     ⿻ *Morchi* ࣪   ࣭  ࣪ *WA* ࣭  🐈  ࣪   ࣭ 
+✧ *Hola ${taguser}*\n${saludo}
 
-*🧇 Activo:* ${uptime}
-*👥 Usuarios:* ${totalreg}
-*🆙 Versión:* 3.0.0
+*꒰꛱ ͜Desarrollado por Cristian Escobar +51927238856*
 
-*💎 Gemas:* ${diamantes}
-*💫 Exp:* ${exp}
-*🫖 Nivel:* ${level}
-*🍢 Rango:* ${role}
-${readMore}
-ㅤ ㅤ   乂 *ʟɪsᴛᴀ ᴅᴇ ᴄᴏᴍᴀɴᴅᴏs* 乂
+*𓈒𓏸🌴 \`Bot Name:\`* ${botname}
+*𓈒𓏸🌵 \`Activo:\`* ${uptime}
+*𓈒𓏸🍃 \`Usuarios:\`* ${totalreg}
+*𓈒𓏸🌿 \`Version:\`* ${version}
 
-𓂂𓏸  𐅹੭੭   *\`mᥱᥒᥙs\`*   🍃ᩚ꤬ᰨᰍ
-ര ׄ 🍃˚ ${usedPrefix}menunsfw
-ര ׄ 🍃˚ ${usedPrefix}menuaudios
-ര ׄ 🍃˚ ${usedPrefix}menuff
-ര ׄ 🍃˚ ${usedPrefix}menuowner
-ര ׄ 🍃˚ ${usedPrefix}menulogos
+> 😸 Si encuentra un comando con errores no dudes en reportarlo con el *Creador*
+${readmore}
+↷✦; \`MENÚS\` ❞ 🌷︵᷼  
+⠞🌷੭‎ ${usedPrefix}menunsfw
+⠞🌷੭‎ ${usedPrefix}menuowner
+⠞🌷੭‎ ${usedPrefix}menulogos
 
-𓂂𓏸  𐅹੭੭   *\`іᥒ𝖿᥆\`*   🫖ᩚ꤬ᰨᰍ
-ര ׄ 🫖˚ ${usedPrefix}totalf
-ര ׄ 🫖˚ ${usedPrefix}grupos
-ര ׄ 🫖˚ ${usedPrefix}sugerir
-ര ׄ 🫖˚ ${usedPrefix}report
-ര ׄ 🫖˚ ${usedPrefix}owner
-ര ׄ 🫖˚ ${usedPrefix}ping
-ര ׄ 🫖˚ ${usedPrefix}uptime
-ര ׄ 🫖˚ ${usedPrefix}horario
-ര ׄ 🫖˚ ${usedPrefix}precios
+↷✦; \`INFO BOT\` ❞ 🍄︵᷼  
+⠞🍄੭‎ ${usedPrefix}totalf
+⠞🍄੭‎ ${usedPrefix}grupos
+⠞🍄੭‎ ${usedPrefix}sugerir
+⠞🍄੭‎ ${usedPrefix}report
+⠞🍄੭‎ ${usedPrefix}owner
+⠞🍄੭‎ ${usedPrefix}ping
+⠞🍄੭‎ ${usedPrefix}uptime
+⠞🍄੭‎ ${usedPrefix}horario
+⠞🍄੭‎ ${usedPrefix}precios
 
-𓂂𓏸  𐅹੭੭   *\`᥆ᥒ - ᥆𝖿𝖿\`*   🌿ᩚ꤬ᰨᰍ
-ര ׄ 🌿˚ ${usedPrefix}enable *opción*
-ര ׄ 🌿˚ ${usedPrefix}disable *opción*
-ര ׄ 🌿˚ ${usedPrefix}on *opción*
-ര ׄ 🌿˚ ${usedPrefix}off *opción*
-ര ׄ 🌿˚ ${usedPrefix}manual
+↷✦; \`CONFIG\` ❞ 🪻︵᷼ 
+⠞🪻੭‎ ${usedPrefix}enable *opción*
+⠞🪻੭‎ ${usedPrefix}disable *opción*
+⠞🪻੭‎ ${usedPrefix}on *opción*
+⠞🪻੭‎ ${usedPrefix}off *opción*
+⠞🪻੭‎ ${usedPrefix}manual
 
-𓂂𓏸  𐅹੭੭   *\`ძᥱsᥴᥲrgᥲs\`*   📥ᩚ꤬ᰨᰍ
-ര ׄ 📥˚ ${usedPrefix}play *texto*
-ര ׄ 📥˚ ${usedPrefix}aplay *texto*
-ര ׄ 📥˚ ${usedPrefix}aplay2 *texto*
-ര ׄ 📥˚ ${usedPrefix}splay *texto*
-ര ׄ 📥˚ ${usedPrefix}ytmp4doc *texto*
-ര ׄ 📥˚ ${usedPrefix}ytmp3doc *texto*
-ര ׄ 📥˚ ${usedPrefix}apk *texto*
-ര ׄ 📥˚ ${usedPrefix}pinterest *texto*
-ര ׄ 📥˚ ${usedPrefix}capcut *url*
-ര ׄ 📥˚ ${usedPrefix}pinvid *url*
-ര ׄ 📥˚ ${usedPrefix}ytmp4 *url*
-ര ׄ 📥˚ ${usedPrefix}ytmp3 *url*
-ര ׄ 📥˚ ${usedPrefix}tiktok *url*
-ര ׄ 📥˚ ${usedPrefix}tiktok2 *url*
-ര ׄ 📥˚ ${usedPrefix}instagram *url*
-ര ׄ 📥˚ ${usedPrefix}facebook *url*
-ര ׄ 📥˚ ${usedPrefix}mediafire *url*
-ര ׄ 📥˚ ${usedPrefix}mega *url*
-ര ׄ 📥˚ ${usedPrefix}playstore *url*
-ര ׄ 📥˚ ${usedPrefix}xnxxdl *url*
-ര ׄ 📥˚ ${usedPrefix}xvideosdl *url*
-ര ׄ 📥˚ ${usedPrefix}pornhubdl *url*
+↷✦; \`DOWNLOAD\` ❞ 🪷︵᷼ 
+⠞🪷੭‎ ${usedPrefix}play *texto*
+⠞🪷੭‎ ${usedPrefix}ytmp4doc *texto*
+⠞🪷੭‎ ${usedPrefix}ytmp3doc *texto*
+⠞🪷੭‎ ${usedPrefix}apk *texto*
+⠞🪷੭‎ ${usedPrefix}pinterest *texto*
+⠞🪷੭‎ ${usedPrefix}pinvid *url*
+⠞🪷੭‎ ${usedPrefix}ytmp4 *url*
+⠞🪷੭‎ ${usedPrefix}ytmp3 *url*
+⠞🪷੭‎ ${usedPrefix}tiktok *url*
+⠞🪷੭‎ ${usedPrefix}instagram *url*
+⠞🪷੭‎ ${usedPrefix}facebook *url*
+⠞🪷੭‎ ${usedPrefix}mediafire *url*
+⠞🪷੭‎ ${usedPrefix}mega *url*
+⠞🪷੭‎ ${usedPrefix}playstore *url*
+⠞🪷੭‎ ${usedPrefix}xnxxdl *url*
+⠞🪷੭‎ ${usedPrefix}xvideosdl *url*
 
-𓂂𓏸  𐅹੭੭   *\`ᑲᥙsᥴᥲძ᥆rᥱs\`*   🔎ᩚ꤬ᰨᰍ
-ര ׄ 🔎˚ ${usedPrefix}scsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}aplaysearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}ttsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}ttsearch2 *texto*
-ര ׄ 🔎˚ ${usedPrefix}ytsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}hpmsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}spotifysearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}githubsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}playstoresearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}xnxxsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}xvsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}pornhubsearch *texto*
-ര ׄ 🔎˚ ${usedPrefix}gnula *texto*
-ര ׄ 🔎˚ ${usedPrefix}mercadolibre *texto*
-ര ׄ 🔎˚ ${usedPrefix}ffstalk *id*
+↷✦; \`SEARCH\` ❞ 🍮︵᷼ 
+⠞🍮੭‎ ${usedPrefix}aplaysearch *texto*
+⠞🍮੭‎ ${usedPrefix}ttsearch *texto*
+⠞🍮੭‎ ${usedPrefix}ttsearch2 *texto*
+⠞🍮੭‎ ${usedPrefix}ytsearch *texto*
+⠞🍮੭‎ ${usedPrefix}spotifysearch *texto*
+⠞🍮੭‎ ${usedPrefix}playstoresearch *texto*
+⠞🍮੭‎ ${usedPrefix}xnxxsearch *texto*
+⠞🍮੭‎ ${usedPrefix}xvsearch *texto*
+⠞🍮੭‎ ${usedPrefix}gnula *texto*
+⠞🍮੭‎ ${usedPrefix}mercadolibre *texto*
 
-𓂂𓏸  𐅹੭੭   *\`іᥒ𝗍ᥱᥣіgᥱᥒᥴіᥲs\`*   ☕ᩚ꤬ᰨᰍ
-ര ׄ ☕˚ ${usedPrefix}ia *texto*
-ര ׄ ☕˚ ${usedPrefix}shadow *texto*
-ര ׄ ☕˚ ${usedPrefix}flux *texto*
-ര ׄ ☕˚ ${usedPrefix}chatgpt *texto*
-ര ׄ ☕˚ ${usedPrefix}imgg *texto*
-ര ׄ ☕˚ ${usedPrefix}imgg2 *texto*
+↷✦; \`LISTAS\` ❞ 📜︵᷼ 
+⠞📜੭‎ ${usedPrefix}v4fem *hr + p*
+⠞📜੭‎ ${usedPrefix}v4masc *hr + p*
+⠞📜੭‎ ${usedPrefix}v4mixto *hr + p*
+⠞📜੭‎ ${usedPrefix}v6fem *hr + p*
+⠞📜੭‎ ${usedPrefix}v6masc *hr + p*
+⠞📜੭‎ ${usedPrefix}v6mixto *hr + p*
 
-𓂂𓏸  𐅹੭੭   *\`ᥣіs𝗍ᥲs\`*   📑ᩚ꤬ᰨᰍ
-ര ׄ 📑˚ ${usedPrefix}infem4 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}inmasc4 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}inmixto4 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}infem6 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}inmasc6 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}inmixto6 *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v4fem *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v4masc *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v4mixto *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v6fem *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v6masc *hr + p*
-ര ׄ 📑˚ ${usedPrefix}v6mixto *hr + p*
+↷✦; \`FRASES\` ❞ 🌻︵᷼ 
+⠞🌻੭‎ ${usedPrefix}piropo
+⠞🌻੭‎ ${usedPrefix}consejo
+⠞🌻੭‎ ${usedPrefix}fraseromantica
 
-𓂂𓏸  𐅹੭੭   *\`𝖿rᥲsᥱs\`*   🌻ᩚ꤬ᰨᰍ
-ര ׄ 🌻˚ ${usedPrefix}piropo
-ര ׄ 🌻˚ ${usedPrefix}consejo
-ര ׄ 🌻˚ ${usedPrefix}fraseromantica
+↷✦; \`CONVERTERS\` ❞ 🧸︵᷼ 
+⠞🧸੭‎ ${usedPrefix}tourl *img*
+⠞🧸੭‎ ${usedPrefix}tourl *aud*
+⠞🧸੭‎ ${usedPrefix}toptt *aud*
+⠞🧸੭‎ ${usedPrefix}toptt *vid*
+⠞🧸੭‎ ${usedPrefix}tourl *vid*
+⠞🧸੭‎ ${usedPrefix}tomp3 *vid*
+⠞🧸੭‎ ${usedPrefix}toimg *sticker*
 
-𓂂𓏸  𐅹੭੭   *\`ᥴ᥆ᥒ᥎ᥱr𝗍іძ᥆rᥱs\`*   🪸ᩚ꤬ᰨᰍ
-ര ׄ 🪸˚ ${usedPrefix}tourl *img*
-ര ׄ 🪸˚ ${usedPrefix}tourl *aud*
-ര ׄ 🪸˚ ${usedPrefix}toptt *aud*
-ര ׄ 🪸˚ ${usedPrefix}toptt *vid*
-ര ׄ 🪸˚ ${usedPrefix}tourl *vid*
-ര ׄ 🪸˚ ${usedPrefix}tomp3 *vid*
-ര ׄ 🪸˚ ${usedPrefix}toimg *sticker*
+↷✦; \`TOOLS\` ❞ 🛠️︵᷼ 
+⠞🛠️੭‎ ${usedPrefix}clima *texto*
+⠞🛠️੭‎ ${usedPrefix}readmore *texto*
+⠞🛠️੭‎ ${usedPrefix}read *texto*
+⠞🛠️੭‎ ${usedPrefix}fake *texto + user + texto*
+⠞🛠️੭‎ ${usedPrefix}traducir *idioma + texto*
+⠞🛠️੭‎ ${usedPrefix}hd *img*
+⠞🛠️੭‎ ${usedPrefix}whatmusic *aud*
+⠞🛠️੭‎ ${usedPrefix}whatmusic *vid*
+⠞🛠️੭‎ ${usedPrefix}flag *país*
+⠞🛠️੭‎ ${usedPrefix}inspect *link*
+⠞🛠️੭‎ ${usedPrefix}inspeccionar *link*
+⠞🛠️੭‎ ${usedPrefix}nuevafotochannel
+⠞🛠️੭‎ ${usedPrefix}nosilenciarcanal
+⠞🛠️੭‎ ${usedPrefix}silenciarcanal
+⠞🛠️੭‎ ${usedPrefix}seguircanal
+⠞🛠️੭‎ ${usedPrefix}avisoschannel
+⠞🛠️੭‎ ${usedPrefix}resiviravisos
+⠞🛠️੭‎ ${usedPrefix}eliminarfotochannel
+⠞🛠️੭‎ ${usedPrefix}reactioneschannel
+⠞🛠️੭‎ ${usedPrefix}reaccioneschannel
+⠞🛠️੭‎ ${usedPrefix}nuevonombrecanal
+⠞🛠️੭‎ ${usedPrefix}nuevadescchannel
 
-𓂂𓏸  𐅹੭੭   *\`hᥱrrᥲmіᥱᥒ𝗍ᥲs\`*   ⚒ᩚ꤬ᰨᰍ
-ര ׄ ⚒️˚ ${usedPrefix}clima *texto*
-ര ׄ ⚒️˚ ${usedPrefix}readmore *texto*
-ര ׄ ⚒️˚ ${usedPrefix}read *texto*
-ര ׄ ⚒️˚ ${usedPrefix}fake *texto + user + texto*
-ര ׄ ⚒️˚ ${usedPrefix}traducir *idioma + texto*
-ര ׄ ⚒️˚ ${usedPrefix}hd *img*
-ര ׄ ⚒️˚ ${usedPrefix}whatmusic *aud*
-ര ׄ ⚒️˚ ${usedPrefix}whatmusic *vid*
-ര ׄ ⚒️˚ ${usedPrefix}flag *país*
-ര ׄ ⚒️˚ ${usedPrefix}inspect *link*
-ര ׄ ⚒️˚ ${usedPrefix}inspeccionar *link*
-ര ׄ ⚒️˚ ${usedPrefix}nuevafotochannel
-ര ׄ ⚒️˚ ${usedPrefix}nosilenciarcanal
-ര ׄ ⚒️˚ ${usedPrefix}silenciarcanal
-ര ׄ ⚒️˚ ${usedPrefix}seguircanal
-ര ׄ ⚒️˚ ${usedPrefix}avisoschannel
-ര ׄ ⚒️˚ ${usedPrefix}resiviravisos
-ര ׄ ⚒️˚ ${usedPrefix}eliminarfotochannel
-ര ׄ ⚒️˚ ${usedPrefix}reactioneschannel
-ര ׄ ⚒️˚ ${usedPrefix}reaccioneschannel
-ര ׄ ⚒️˚ ${usedPrefix}nuevonombrecanal
-ര ׄ ⚒️˚ ${usedPrefix}nuevadescchannel
-
-𓂂𓏸  𐅹੭੭   *\`grᥙ⍴᥆s\`*   🌵ᩚ꤬ᰨᰍ
-ര ׄ 🌵˚ ${usedPrefix}add *número*
-ര ׄ 🌵˚ ${usedPrefix}grupo *abrir / cerrar*
-ര ׄ 🌵˚ ${usedPrefix}grouptime *tiempo*
-ര ׄ 🌵˚ ${usedPrefix}notify *texto*
-ര ׄ 🌵˚ Aviso *texto*
-ര ׄ 🌵˚ Admins *texto*
-ര ׄ 🌵˚ ${usedPrefix}todos *texto*
-ര ׄ 🌵˚ ${usedPrefix}setwelcome *texto*
-ര ׄ 🌵˚ ${usedPrefix}groupdesc *texto*
-ര ׄ 🌵˚ ${usedPrefix}setbye *texto*
-ര ׄ 🌵˚ ${usedPrefix}promote *@tag*
-ര ׄ 🌵˚ ${usedPrefix}demote *@tag*
-ര ׄ 🌵˚ ${usedPrefix}kick *@tag*
-ര ׄ 🌵˚ ${usedPrefix}mute *@tag*
-ര ׄ 🌵˚ ${usedPrefix}inactivos *opción*
-ര ׄ 🌵˚ ${usedPrefix}tagnum *prefix*
-ര ׄ 🌵˚ ${usedPrefix}link
-ര ׄ 🌵˚ ${usedPrefix}fantasmas
+↷✦; \`GROUPS\` ❞ 🌿︵᷼ 
+⠞🌿੭‎ ${usedPrefix}add *número*
+⠞🌿੭‎ ${usedPrefix}grupo *abrir / cerrar*
+⠞🌿੭‎ ${usedPrefix}grouptime *tiempo*
+⠞🌿੭‎ ${usedPrefix}notify *texto*
+⠞🌿੭‎ Aviso *texto*
+⠞🌿੭‎ Admins *texto*
+⠞🌿੭‎ ${usedPrefix}todos *texto*
+⠞🌿੭‎ ${usedPrefix}setwelcome *texto*
+⠞🌿੭‎ ${usedPrefix}groupdesc *texto*
+⠞🌿੭‎ ${usedPrefix}setbye *texto*
+⠞🌿੭‎ ${usedPrefix}promote *@tag*
+⠞🌿੭‎ ${usedPrefix}demote *@tag*
+⠞🌿੭‎ ${usedPrefix}kick *@tag*
+⠞🌿੭‎ ${usedPrefix}mute *@tag*
+⠞🌿੭‎ ${usedPrefix}inactivos *opción*
+⠞🌿੭‎ ${usedPrefix}tagnum *prefix*
+⠞🌿੭‎ ${usedPrefix}link
+⠞🌿੭‎ ${usedPrefix}fantasmas
 
 𓂂𓏸  𐅹੭੭   *\`ᥱ𝖿ᥱᥴ𝗍᥆s\`*   🪻ᩚ꤬ᰨᰍ
 ര ׄ 🪻˚ ${usedPrefix}bass *vid*
