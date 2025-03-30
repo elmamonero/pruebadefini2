@@ -27,14 +27,14 @@ const handler = async (m, { conn, isPrems }) => {
         forwardingScore: 999,
         externalAdReply: {
           title: `${await conn.getName(m.sender)}, Thank for using Morchiyara, you can follow me on Instagram by clicking here`,
-          body: 'I'm Dev Criss',
+          body: 'Im Dev Criss',
           thumbnail: await (await fetch(img)).buffer(),
           sourceUrl: insta,
           mediaType: 1,
           renderLargerThumbnail: true
         }
       }
-    }, { quoted: m });
+    }, { quoted: fkontak });
 
   } catch (e) {
     conn.reply(m.chat, '❎ Error en el comando. Inténtalo más tarde.', m);
