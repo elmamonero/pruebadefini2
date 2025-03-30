@@ -156,31 +156,31 @@ ${readmore}
 ⠞🌿੭‎ ${usedPrefix}link
 ⠞🌿੭‎ ${usedPrefix}fantasmas
 
-𓂂𓏸  𐅹੭੭   *\`ᥱ𝖿ᥱᥴ𝗍᥆s\`*   🪻ᩚ꤬ᰨᰍ
-ര ׄ 🪻˚ ${usedPrefix}bass *vid*
-ര ׄ 🪻˚ ${usedPrefix}blown *vid*
-ര ׄ 🪻˚ ${usedPrefix}deep *vid*
-ര ׄ 🪻˚ ${usedPrefix}earrape *vid*
-ര ׄ 🪻˚ ${usedPrefix}fast *vid*
-ര ׄ 🪻˚ ${usedPrefix}smooth *vid*
-ര ׄ 🪻˚ ${usedPrefix}tupai *vid*
-ര ׄ 🪻˚ ${usedPrefix}nightcore *vid*
-ര ׄ 🪻˚ ${usedPrefix}reverse *vid*
-ര ׄ 🪻˚ ${usedPrefix}robot *vid*
-ര ׄ 🪻˚ ${usedPrefix}slow *vid*
-ര ׄ 🪻˚ ${usedPrefix}squirrel *vid*
-ര ׄ 🪻˚ ${usedPrefix}chipmunk *vid*
-ര ׄ 🪻˚ ${usedPrefix}reverb *vid*
-ര ׄ 🪻˚ ${usedPrefix}chorus *vid*
-ര ׄ 🪻˚ ${usedPrefix}flanger *vid*
-ര ׄ 🪻˚ ${usedPrefix}distortion *vid*
-ര ׄ 🪻˚ ${usedPrefix}pitch *vid*
-ര ׄ 🪻˚ ${usedPrefix}highpass *vid*
-ര ׄ 🪻˚ ${usedPrefix}lowpass *vid*
-ര ׄ 🪻˚ ${usedPrefix}underwater *vid*
+↷✦; \`EFFECTS\` ❞ 🍃︵᷼ 
+⠞🍃੭‎ ${usedPrefix}bass *vid*
+⠞🍃੭‎ ${usedPrefix}blown *vid*
+⠞🍃੭‎ ${usedPrefix}deep *vid*
+⠞🍃੭‎ ${usedPrefix}earrape *vid*
+⠞🍃੭‎ ${usedPrefix}fast *vid*
+⠞🍃੭‎ ${usedPrefix}smooth *vid*
+⠞🍃੭‎ ${usedPrefix}tupai *vid*
+⠞🍃੭‎ ${usedPrefix}nightcore *vid*
+⠞🍃੭‎ ${usedPrefix}reverse *vid*
+⠞🍃੭‎ ${usedPrefix}robot *vid*
+⠞🍃੭‎ ${usedPrefix}slow *vid*
+⠞🍃੭‎ ${usedPrefix}squirrel *vid*
+⠞🍃੭‎ ${usedPrefix}chipmunk *vid*
+⠞🍃੭‎ ${usedPrefix}reverb *vid*
+⠞🍃੭‎ ${usedPrefix}chorus *vid*
+⠞🍃੭‎ ${usedPrefix}flanger *vid*
+⠞🍃੭‎ ${usedPrefix}distortion *vid*
+⠞🍃੭‎ ${usedPrefix}pitch *vid*
+⠞🍃੭‎ ${usedPrefix}highpass *vid*
+⠞🍃੭‎ ${usedPrefix}lowpass *vid*
+⠞🍃੭‎ ${usedPrefix}underwater *vid*
 
-𓂂𓏸  𐅹੭੭   *\`ძі᥎ᥱrsі᥆ᥒ\`*   🥯ᩚ꤬ᰨᰍ
-ര ׄ 🥯˚ ${usedPrefix}gay *@tag*
+↷✦; \`FUN\` ❞ 🥥︵᷼ 
+⠞🥥੭‎ ${usedPrefix}gay *@tag*
 ര ׄ 🥯˚ ${usedPrefix}lesbiana *@tag*
 ര ׄ 🥯˚ ${usedPrefix}pajero *@tag*
 ര ׄ 🥯˚ ${usedPrefix}pajera *@tag*
@@ -207,7 +207,7 @@ ${readmore}
 ര ׄ 🥯˚ ${usedPrefix}love
 ര ׄ 🥯˚ ${usedPrefix}personalidad
 
-𓂂𓏸  𐅹੭੭   *\`ȷᥙᥱg᥆s\`*   🐚ᩚ꤬ᰨᰍ
+↷✦; \`GAME\` ❞ 🪷︵᷼ 
 ര ׄ 🐚˚ ${usedPrefix}pregunta *texto*
 ര ׄ 🐚˚ ${usedPrefix}ttt *texto*
 ര ׄ 🐚˚ ${usedPrefix}ptt *opción*
@@ -215,10 +215,10 @@ ${readmore}
 ര ׄ 🐚˚ ${usedPrefix}acertijo
 ര ׄ 🐚˚ ${usedPrefix}trivia
 
-𓂂𓏸  𐅹੭੭   *\`ᥲᥒіmᥱ\`*   🐚ᩚ꤬ᰨᰍ
+↷✦; \`ANIME\` ❞ 🪷︵᷼ 
 ര ׄ 🏕️˚ ${usedPrefix}messi
 
-𓂂𓏸  𐅹੭੭   *\`gі𝖿s ᥒs𝖿ա\`*   🔥ᩚ꤬ᰨᰍ
+↷✦; \`GIFS NSFW\` ❞ 🪷︵᷼ 
 ര ׄ 🔥˚ ${usedPrefix}violar *@tag*
 ര ׄ 🔥˚ ${usedPrefix}follar *@tag*
 ര ׄ 🔥˚ ${usedPrefix}anal *@tag*
@@ -238,26 +238,26 @@ ${readmore}
 ര ׄ 🔥˚ ${usedPrefix}manosear *@tag*
 ര ׄ 🔥˚ ${usedPrefix}lesbianas *@tag*
 
-𓂂𓏸  𐅹੭੭   *\`s𝗍іᥴkᥱrs\`*   🍦ᩚ꤬ᰨᰍ
+↷✦; \`STICKERS\` ❞ 🪷︵᷼ 
 ര ׄ 🍦˚ ${usedPrefix}sticker *img*
 ര ׄ 🍦˚ ${usedPrefix}sticker *vid*
 ര ׄ 🍦˚ ${usedPrefix}brat *texto*
 ര ׄ 🍦˚ ${usedPrefix}qc *texto*
 ര ׄ 🍦˚ ${usedPrefix}dado
 
-𓂂𓏸  𐅹੭੭   *\`r⍴g\`*   💸ᩚ꤬ᰨᰍ
+↷✦; \`RPG\` ❞ 🪷︵᷼ 
 ര ׄ 💸˚ ${usedPrefix}minar
 ര ׄ 💸˚ ${usedPrefix}cofre
 ര ׄ 💸˚ ${usedPrefix}slut
 ര ׄ 💸˚ ${usedPrefix}nivel
 ര ׄ 💸˚ ${usedPrefix}ruleta
 
-𓂂𓏸  𐅹੭੭   *\`rᥱgіs𝗍r᥆\`*   🎣ᩚ꤬ᰨᰍ
+↷✦; \`REGISTRO\` ❞ 🪷︵᷼ 
 ര ׄ 🎣˚ ${usedPrefix}perfil
 ര ׄ 🎣˚ ${usedPrefix}reg
 ര ׄ 🎣˚ ${usedPrefix}unreg
 
-𓂂𓏸  𐅹੭੭   *\`᥆աᥒᥱr\`*   🍀ᩚ꤬ᰨᰍ
+↷✦; \`OWNER\` ❞ 🪷︵᷼ 
 ര ׄ 🍀˚ ${usedPrefix}salir
 ര ׄ 🍀˚ ${usedPrefix}update
 ര ׄ 🍀˚ ${usedPrefix}blocklist
