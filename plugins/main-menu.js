@@ -246,21 +246,21 @@ ${readmore}
 ⠞🦋੭‎ ${usedPrefix}qc *texto*
 ⠞🦋੭‎ ${usedPrefix}dado
 
-↷✦; \`RPG\` ❞ 🪷︵᷼ 
-ര ׄ 💸˚ ${usedPrefix}minar
-ര ׄ 💸˚ ${usedPrefix}cofre
-ര ׄ 💸˚ ${usedPrefix}slut
-ര ׄ 💸˚ ${usedPrefix}nivel
-ര ׄ 💸˚ ${usedPrefix}ruleta
+↷✦; \`RPG\` ❞ 💸︵᷼ 
+⠞💸੭‎ ${usedPrefix}minar
+⠞💸੭‎ ${usedPrefix}cofre
+⠞💸੭ ${usedPrefix}slut
+⠞💸੭ ${usedPrefix}nivel
+⠞💸੭ ${usedPrefix}ruleta
 
-↷✦; \`REGISTRO\` ❞ 🪷︵᷼ 
-ര ׄ 🎣˚ ${usedPrefix}perfil
-ര ׄ 🎣˚ ${usedPrefix}reg
-ര ׄ 🎣˚ ${usedPrefix}unreg
+↷✦; \`REGISTRO\` ❞ ☁️︵᷼ 
+⠞☁️੭ ${usedPrefix}perfil
+⠞☁️੭ ${usedPrefix}reg
+⠞☁️੭ ${usedPrefix}unreg
 
 ↷✦; \`OWNER\` ❞ 🪷︵᷼ 
-ര ׄ 🍀˚ ${usedPrefix}salir
-ര ׄ 🍀˚ ${usedPrefix}update
+⠞👑੭ ${usedPrefix}salir
+⠞👑੭ ${usedPrefix}update
 ര ׄ 🍀˚ ${usedPrefix}blocklist
 ര ׄ 🍀˚ ${usedPrefix}grouplist
 ര ׄ 🍀˚ ${usedPrefix}restart
