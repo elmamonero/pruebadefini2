@@ -284,7 +284,7 @@ ${readMore}
   }
 };
 
-handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|cmd)$/i;
+handler.command = /^(tesm)$/i;
 handler.fail = null;
 
 export default handler;
