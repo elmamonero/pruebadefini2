@@ -181,69 +181,70 @@ ${readmore}
 
 ↷✦; \`FUN\` ❞ 🥥︵᷼ 
 ⠞🥥੭‎ ${usedPrefix}gay *@tag*
-ര ׄ 🥯˚ ${usedPrefix}lesbiana *@tag*
-ര ׄ 🥯˚ ${usedPrefix}pajero *@tag*
-ര ׄ 🥯˚ ${usedPrefix}pajera *@tag*
-ര ׄ 🥯˚ ${usedPrefix}puto *@tag*
-ര ׄ 🥯˚ ${usedPrefix}puta *@tag*
-ര ׄ 🥯˚ ${usedPrefix}manco *@tag*
-ര ׄ 🥯˚ ${usedPrefix}manca *@tag*
-ര ׄ 🥯˚ ${usedPrefix}rata *@tag*
-ര ׄ 🥯˚ ${usedPrefix}prostituto *@tag*
-ര ׄ 🥯˚ ${usedPrefix}prostituta *@tag*
-ര ׄ 🥯˚ ${usedPrefix}doxear *@tag*
-ര ׄ 🥯˚ ${usedPrefix}jalamela *@tag*
-ര ׄ 🥯˚ ${usedPrefix}simi *texto*
-ര ׄ 🥯˚ ${usedPrefix}pregunta *texto*
-ര ׄ 🥯˚ ${usedPrefix}genio *texto*
-ര ׄ 🥯˚ ${usedPrefix}top
-ര ׄ 🥯˚ ${usedPrefix}sorteo
-ര ׄ 🥯˚ ${usedPrefix}piropo
-ര ׄ 🥯˚ ${usedPrefix}chiste
-ര ׄ 🥯˚ ${usedPrefix}facto
-ര ׄ 🥯˚ ${usedPrefix}verdad
-ര ׄ 🥯˚ ${usedPrefix}pareja
-ര ׄ 🥯˚ ${usedPrefix}parejas
-ര ׄ 🥯˚ ${usedPrefix}love
-ര ׄ 🥯˚ ${usedPrefix}personalidad
+⠞🥥੭‎ ${usedPrefix}lesbiana *@tag*
+⠞🥥੭‎ ${usedPrefix}pajero *@tag*
+⠞🥥੭‎ ${usedPrefix}pajera *@tag*
+⠞🥥੭‎ ${usedPrefix}puto *@tag*
+⠞🥥੭‎ ${usedPrefix}puta *@tag*
+⠞🥥੭‎ ${usedPrefix}manco *@tag*
+⠞🥥੭‎ ${usedPrefix}manca *@tag*
+⠞🥥੭‎ ${usedPrefix}rata *@tag*
+⠞🥥੭‎ ${usedPrefix}prostituto *@tag*
+⠞🥥੭‎ ${usedPrefix}prostituta *@tag*
+⠞🥥੭‎ ${usedPrefix}doxear *@tag*
+⠞🥥੭‎ ${usedPrefix}jalamela *@tag*
+⠞🥥੭‎ ${usedPrefix}simi *texto*
+⠞🥥੭‎ ${usedPrefix}pregunta *texto*
+⠞🥥੭‎ ${usedPrefix}genio *texto*
+⠞🥥੭‎ ${usedPrefix}top
+⠞🥥੭‎ ${usedPrefix}sorteo
+⠞🥥੭‎ ${usedPrefix}piropo
+⠞🥥੭‎ ${usedPrefix}chiste
+⠞🥥੭‎ ${usedPrefix}facto
+⠞🥥੭‎ ${usedPrefix}verdad
+⠞🥥੭‎ ${usedPrefix}pareja
+⠞🥥੭‎ ${usedPrefix}parejas
+⠞🥥੭‎ ${usedPrefix}love
+⠞🥥੭‎ ${usedPrefix}personalidad
 
-↷✦; \`GAME\` ❞ 🪷︵᷼ 
-ര ׄ 🐚˚ ${usedPrefix}pregunta *texto*
-ര ׄ 🐚˚ ${usedPrefix}ttt *texto*
-ര ׄ 🐚˚ ${usedPrefix}ptt *opción*
-ര ׄ 🐚˚ ${usedPrefix}delttt
-ര ׄ 🐚˚ ${usedPrefix}acertijo
-ര ׄ 🐚˚ ${usedPrefix}trivia
+↷✦; \`GAME\` ❞ 🎋︵᷼ 
+⠞🎋੭‎ ${usedPrefix}pregunta *texto*
+⠞🎋੭‎ ${usedPrefix}ttt *texto*
+⠞🎋੭‎ ${usedPrefix}ptt *opción*
+⠞🎋੭‎ ${usedPrefix}delttt
+⠞🎋੭‎ ${usedPrefix}acertijo
+⠞🎋੭‎ ${usedPrefix}trivia
 
-↷✦; \`ANIME\` ❞ 🪷︵᷼ 
-ര ׄ 🏕️˚ ${usedPrefix}messi
+↷✦; \`ANIME\` ❞ 🌾︵᷼ 
+⠞🌾੭‎ ${usedPrefix}messi
+⠞🌾੭‎ ${usedPrefix}cr7
 
-↷✦; \`GIFS NSFW\` ❞ 🪷︵᷼ 
-ര ׄ 🔥˚ ${usedPrefix}violar *@tag*
-ര ׄ 🔥˚ ${usedPrefix}follar *@tag*
-ര ׄ 🔥˚ ${usedPrefix}anal *@tag*
-ര ׄ 🔥˚ ${usedPrefix}coger *@tag*
-ര ׄ 🔥˚ ${usedPrefix}coger2 *@tag*
-ര ׄ 🔥˚ ${usedPrefix}penetrar *@tag*
-ര ׄ 🔥˚ ${usedPrefix}sexo *@tag*
-ര ׄ 🔥˚ ${usedPrefix}rusa *@tag*
-ര ׄ 🔥˚ ${usedPrefix}sixnine *@tag*
-ര ׄ 🔥˚ ${usedPrefix}pies *@tag*
-ര ׄ 🔥˚ ${usedPrefix}mamada *@tag*
-ര ׄ 🔥˚ ${usedPrefix}lickpussy *@tag*
-ര ׄ 🔥˚ ${usedPrefix}grabboobs *@tag*
-ര ׄ 🔥˚ ${usedPrefix}suckboobs *@tag*
-ര ׄ 🔥˚ ${usedPrefix}cum *@tag*
-ര ׄ 🔥˚ ${usedPrefix}fap *@tag*
-ര ׄ 🔥˚ ${usedPrefix}manosear *@tag*
-ര ׄ 🔥˚ ${usedPrefix}lesbianas *@tag*
+↷✦; \`GIFS NSFW\` ❞ 🔥︵᷼ 
+⠞🔥੭‎ ${usedPrefix}violar *@tag*
+⠞🔥੭‎ ${usedPrefix}follar *@tag*
+⠞🔥੭‎ ${usedPrefix}anal *@tag*
+⠞🔥੭‎ ${usedPrefix}coger *@tag*
+⠞🔥੭‎ ${usedPrefix}coger2 *@tag*
+⠞🔥੭‎ ${usedPrefix}penetrar *@tag*
+⠞🔥੭‎ ${usedPrefix}sexo *@tag*
+⠞🔥੭‎ ${usedPrefix}rusa *@tag*
+⠞🔥੭‎ ${usedPrefix}sixnine *@tag*
+⠞🔥੭‎ ${usedPrefix}pies *@tag*
+⠞🔥੭‎ ${usedPrefix}mamada *@tag*
+⠞🔥੭‎ ${usedPrefix}lickpussy *@tag*
+⠞🔥੭‎ ${usedPrefix}grabboobs *@tag*
+⠞🔥੭‎ ${usedPrefix}suckboobs *@tag*
+⠞🔥੭‎ ${usedPrefix}cum *@tag*
+⠞🔥੭‎ ${usedPrefix}fap *@tag*
+⠞🔥੭‎ ${usedPrefix}manosear *@tag*
+⠞🔥੭‎ ${usedPrefix}lesbianas *@tag*
 
-↷✦; \`STICKERS\` ❞ 🪷︵᷼ 
-ര ׄ 🍦˚ ${usedPrefix}sticker *img*
-ര ׄ 🍦˚ ${usedPrefix}sticker *vid*
-ര ׄ 🍦˚ ${usedPrefix}brat *texto*
-ര ׄ 🍦˚ ${usedPrefix}qc *texto*
-ര ׄ 🍦˚ ${usedPrefix}dado
+↷✦; \`STICKERS\` ❞ 🦋︵᷼ 
+⠞🦋੭‎ ${usedPrefix}sticker *img*
+⠞🦋੭‎ ${usedPrefix}sticker *vid*
+⠞🦋੭‎ ${usedPrefix}brat *texto*
+⠞🦋੭‎ ${usedPrefix}qc *texto*
+⠞🦋੭‎ ${usedPrefix}dado
 
 ↷✦; \`RPG\` ❞ 🪷︵᷼ 
 ര ׄ 💸˚ ${usedPrefix}minar
