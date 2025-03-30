@@ -1,8 +1,4 @@
-import fs from 'fs'
-import fetch from 'node-fetch'
-import { xpRange } from '../lib/levelling.js'
-import { promises } from 'fs'
-import { join } from 'path'
+import fetch from 'node-fetch';
 
 const handler = async (m, { conn, isPrems }) => {
   try {
@@ -14,8 +10,8 @@ const handler = async (m, { conn, isPrems }) => {
     const _uptime = process.uptime() * 1000;
     const uptime = clockString(_uptime);
 
-    let totalreg = Object.keys(global.db.data.users).length
-    let rtotalreg = Object.values(global.db.data.users).filter(user => user.registered == true).length
+    const user = global.db.data.users[m.sender];
+    const { money, joincount, exp, limit, level, role } = user;
 
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
@@ -24,7 +20,7 @@ const handler = async (m, { conn, isPrems }) => {
 
 *꒰꛱ ͜Desarrollado por Cristian Escobar +51927238856*
 
-*𓈒𓏸🌴 \`Bot Name:\`* ${botname}
+*𓈒𓏸🌴 \`Bot Name:\`* Morchi Bot - MD
 *𓈒𓏸🌵 \`Activo:\`* ${uptime}
 *𓈒𓏸🍃 \`Usuarios:\`* ${totalreg}
 *𓈒𓏸🌿 \`Version:\`* 1.0.0
@@ -288,8 +284,6 @@ const handler = async (m, { conn, isPrems }) => {
   }
 };
 
-handler.help = ['menuff'];
-handler.tags = ['main'];
 handler.command = /^(menu|menú|memu|memú|help|info|comandos|2help|menu1.2|ayuda|commands|commandos|cmd)$/i;
 handler.fail = null;
 
