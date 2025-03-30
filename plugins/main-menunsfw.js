@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 const handler = async (m, {conn, usedPrefix, text, isPrems}) => {
 
   try {
-    const img = './media/menus/catalgo.jpg';
+    const img = './media/catalgo.jpg';
     const more = String.fromCharCode(8206);
     const readMore = more.repeat(850);
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
