@@ -258,15 +258,15 @@ ${readmore}
 ⠞☁️੭ ${usedPrefix}reg
 ⠞☁️੭ ${usedPrefix}unreg
 
-↷✦; \`OWNER\` ❞ 🪷︵᷼ 
+↷✦; \`OWNER\` ❞ 👑︵᷼ 
 ⠞👑੭ ${usedPrefix}salir
 ⠞👑੭ ${usedPrefix}update
-ര ׄ 🍀˚ ${usedPrefix}blocklist
-ര ׄ 🍀˚ ${usedPrefix}grouplist
-ര ׄ 🍀˚ ${usedPrefix}restart
-ര ׄ 🍀˚ ${usedPrefix}join
-ര ׄ 🍀˚ ${usedPrefix}chetar
-ര ׄ 🍀˚ ${usedPrefix}unbanuser
+⠞👑੭ ${usedPrefix}blocklist
+⠞👑੭ ${usedPrefix}grouplist
+⠞👑੭ ${usedPrefix}restart
+⠞👑੭ ${usedPrefix}join
+⠞👑੭ ${usedPrefix}chetar
+⠞👑੭ ${usedPrefix}unbanuser
 `.trim()
 
         await conn.sendMessage(m.chat, {
