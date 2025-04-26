@@ -18,7 +18,7 @@ font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']
 });
-say(`Developed by Cristian Escobar`, {
+say(`Developed by Pantheon`, {
 font: 'console',
 align: 'center',
 gradient: ['red', 'magenta']
