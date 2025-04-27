@@ -504,16 +504,16 @@ global.dfail = (type, m, conn) => {
 let user2 = m.pushName || 'Anónimo'
 
 const msg = {
-rowner: '*🐈 Esta función solo puede ser usada por el actual Owner.*', 
-owner: '*🐈 Esta función solo puede ser usada por mi Desarrollador.*', 
-mods: '*🐈 Esta función solo puede ser usada los moderadores del bot.*', 
-premium: '*🐈 Esta función solo es para usuarios Premium.*', 
-group: '*🐈 Esta funcion solo puede ser ejecutada en Grupos.*', 
-private: '*🐈 Esta función solo puede ser ejecutada en chat privado.*', 
-admin: '*🐈 Este comando solo puede ser usado por Admins.*', 
-botAdmin: '*🐈 Para usar esta función debo ser Admin.*',
-unreg: `*🐈 Morchi te avisa que no te encuentras registrado para usar esta función en el bot.*`,
-restrict: '*🐈 Esta característica esta desactivada.*'
+rowner: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙖 𝙥𝙤𝙧 𝙚𝙡 𝙘𝙧𝙚𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙗𝙤𝙩.```', 
+owner: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙖 𝙥𝙤𝙧 𝙚𝙡 𝙙𝙚𝙨𝙖𝙧𝙧𝙤𝙡𝙡𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙗𝙤𝙩.```'', 
+mods: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙢𝙤𝙙𝙚𝙧𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.```', 
+premium: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙥𝙤𝙧 𝙪𝙨𝙪𝙖𝙧𝙞𝙤𝙨 𝙥𝙧𝙚𝙢𝙞𝙪𝙢.```', 
+group: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙚𝙣 𝙜𝙧𝙪𝙥𝙤𝙨.```', 
+private: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙚𝙟𝙚𝙘𝙪𝙩𝙖𝙙𝙖 𝙚𝙣 𝙢𝙞 𝙘𝙝𝙖𝙩 𝙥𝙧𝙞𝙫𝙖𝙙𝙤.```', 
+admin: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙖𝙙𝙢𝙞𝙣𝙨 𝙙𝙚𝙡 𝙜𝙧𝙪𝙥𝙤!!.```', 
+botAdmin: '```🌙 𝙋𝙖𝙧𝙖 𝙥𝙤𝙙𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙧 𝙚𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙚𝙨 𝙣𝙚𝙘𝙚𝙨𝙖𝙧𝙞𝙤 𝙦𝙪𝙚 𝙮𝙤 𝙨𝙚𝙖 𝙖𝙙𝙢𝙞𝙣!!.```',
+unreg: `\`\`\`🌙 𝙉𝙤 𝙩𝙚 𝙚𝙣𝙘𝙪𝙚𝙣𝙩𝙧𝙖𝙨 𝙧𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙙𝙤, 𝙧𝙚𝙜𝙞𝙨𝙩𝙧𝙖𝙩𝙚 𝙥𝙖𝙧𝙖 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙧 𝙚𝙨𝙩𝙚 𝙛𝙪𝙣𝙘𝙞𝙤𝙣.\`\`\`\n\n*#reg <nombre.edad>*\n\n> *\`Ejemplo:\`*\n> .reg ${user2}.18`,
+restrict: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙚𝙨𝙩𝙖 𝙙𝙚𝙨𝙖𝙘𝙩𝙞𝙫𝙖𝙙𝙖.```'
 }[type];
 if (msg) return conn.reply(m.chat, msg, m, rcanal).then(_ => m.react('✖️'))}
 
