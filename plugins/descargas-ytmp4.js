@@ -1,18 +1,17 @@
 import fetch from 'node-fetch';  
-import fg from 'senna-fg';  
+import ytdl from 'ytdl-core';  
 
 let handler = async(m, { conn, args, text }) => {  
     if (!text) return m.reply(`🍭 Ingresa Un Link De YouTube\n> *Ejemplo:* https://youtube.com/shorts/ZisXJqH1jtw?si=0RZacIJU5zhoCmWh`);  
 
     m.react(rwait);  
 
-    let data = await fg.ytmp4(text);  
-    let url = data.dl_url;  
+    // Usando ytdl-core para obtener la URL del video  
+    let stream = ytdl(text, { quality: 'highestvideo' });  
 
-    if (!url) return m.reply('《✧》Hubo un error al intentar acceder al link.\n> Si el problema persiste, reportalo en el grupo de soporte.');  
-
+    // Enviar el video directamente  
     await conn.sendMessage(m.chat, {  
-        video: { url: url },  
+        video: { url: stream },  
         mimetype: "video/mp4",  
         caption: `${dev}`,  
     }, { quoted: m });  
