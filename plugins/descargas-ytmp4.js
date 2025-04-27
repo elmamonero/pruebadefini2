@@ -1,96 +1,29 @@
-import fetch from "node-fetch";
-import axios from 'axios';
+/* [🍭] YOUTUBE VIDEO
+- By WillZek 
+*/
 
-let handler = async (m, { conn, text, usedPrefix, command, args }) => {
-  try {
-    if (!text) {
-      return conn.reply(m.chat, `🌱 Ejemplo de uso: ytv https://youtube.com/watch?v=Hx920thF8X4`, m);
-    }
+import fetch from 'node-fetch';
+import fg from 'senna-fg';
 
-    if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/.test(args[0])) {
-      return m.reply(`Enalce inválido`);
-    }
+let handler = async(m, { conn, args, text }) => {
 
-    m.react('🕒');
-    let json = await ytdl(args[0]);
-    let limit = 10485760;
-    let size = await getSize(json.url);
+if (!text) return m.reply(`🍭 Ingresa Un Link De YouTube\n> *Ejemplo:* https://youtube.com/shorts/ZisXJqH1jtw?si=0RZacIJU5zhoCmWh`);
 
-    const cap = `${json.title}\n\n🌿 \`URL\` : ${args[0]}\n⚖️ \`PESO:\` ${await formatSize(size) || "Desconocido"}`;
+m.react(rwait);
 
-    conn.sendFile(m.chat, await (await fetch(json.url)).buffer(), `${json.title}.mp4`, cap, m, null, { asDocument: true, mimetype: "video/mp4" })
+let data = await fg.ytmp4(text);
+let url = data.dl_url;
 
-    m.react('☑️');
-  } catch (e) {
- m.reply(e)
-  }
-};
+if (!url) return m.reply('《✧》Hubo un error al intentar acceder al link.\n> Si el problema persiste, reportalo en el grupo de soporte.');
 
-handler.help = ['ytv'];
-handler.command = ['ytv2', 'ytv'];
-handler.tags = ['dl'];
-handler.diamantes = 3;
+await conn.sendMessage(m.chat, {
+      video: { url: url },
+      mimetype: "video/mp4",
+      caption: `${dev}`,
+    }, { quoted: m });
+    m.react(done);
+ }
+
+handler.command = ['ytv', 'ytmp4', 'ymp4']
 
 export default handler;
-
-async function ytdl(url) {
-  const headers = {
-    "accept": "*/*",
-    "accept-language": "id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7",
-    "sec-ch-ua": "\"Not A(Brand\";v=\"8\", \"Chromium\";v=\"132\"",
-    "sec-ch-ua-mobile": "?1",
-    "sec-ch-ua-platform": "\"Android\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "cross-site",
-    "Referer": "https://id.ytmp3.mobi/",
-    "Referrer-Policy": "strict-origin-when-cross-origin"
-  };
-  const initial = await fetch(`https://d.ymcdn.org/api/v1/init?p=y&23=1llum1n471&_=${Math.random()}`, { headers });
-  const init = await initial.json();
-  const id = url.match(/(?:youtu\.be\/|youtube\.com\/(?:.*v=|.*\/|.*embed\/))([^&?/]+)/)?.[1];
-  const convertURL = init.convertURL + `&v=${id}&f=mp4&_=${Math.random()}`;
-
-  const converts = await fetch(convertURL, { headers });
-  const convert = await converts.json();
-
-  let info = {};
-  for (let i = 0; i < 3; i++) {
-    const progressResponse = await fetch(convert.progressURL, { headers });
-    info = await progressResponse.json();
-    if (info.progress === 3) break;
-  }
-
-  const result = {
-    url: convert.downloadURL,
-    title: info.title
-  };
-  return result;
-}
-
-async function formatSize(bytes) {
-    const units = ['B', 'KB', 'MB', 'GB', 'TB'];
-    let i = 0;
-    bytes = Number(bytes);
-
-    if (isNaN(bytes)) {
-        return 'Tamaño de bytes inválido'
-    }
-
-    while (bytes >= 1024 && i < units.length - 1) {
-        bytes /= 1024;
-        i++;
-    }
-
-    return `${bytes.toFixed(2)} ${units[i]}`;
-}
-
-async function getSize(url) {
-  try {
-      const response = await axios.head(url);
-      const contentLength = response.headers['content-length'];
-      return contentLength ? parseInt(contentLength, 10) : null;
-  } catch (error) {
-      return error;
-  }
-}
