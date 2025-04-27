@@ -13,12 +13,12 @@ const require = createRequire(__dirname);
 const { name, description, author, version } = require(join(__dirname, './package.json'));
 const { say } = cfonts;
 const rl = createInterface(process.stdin, process.stdout);
-say('Morchiyara\nbot', {
+say('Pantheon\nbot', {
 font: 'chrome',
 align: 'center',
 gradient: ['red', 'magenta']
 });
-say(`Developed by Pantheon`, {
+say(`Developed By Pantheon`, {
 font: 'console',
 align: 'center',
 gradient: ['red', 'magenta']
