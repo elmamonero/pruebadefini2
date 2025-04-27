@@ -8,42 +8,39 @@ import axios from 'axios'
 import moment from 'moment-timezone' 
 
 global.owner = [
-   ['51906168999', 'Maricielo', true],
-   ['51927238856', 'Cristian Escobar', true],
-   ['51990841568', 'Moderador', false],
-   ['51965911060', 'Moderador', false]
+   ['584262668729', 'Pantheon', true]
 ]
 
 global.creadorbot = [
-   ['51927238856', 'Cristian Escobar', true]
+   ['584262668729', 'Pantheon', true]
 ]
 
-global.mods = ['51990841568', '51965911060', '51906168999']
-global.prems = ['51965911060', '51906168999']
+global.mods = ['584262668729']
+global.prems = ['584262668729']
 
 
-global.packname = 'Morchiyara Bot'
-global.botname = 'Morchi Bot - MD'
-global.wm = '⏤͟͟͞͞⋆⬪࣪ꥈ🐱 ׄ ꒱ Morchi ୭'
-global.author = 'Nᴏᴠʌ Ȿᴘʌʀᴋ Cᴏʍʍᴜɴɪᴛʏ'
-global.dev = 'Cʀᴇᴅɪᴛs ᴛᴏ Nᴏᴠʌ Ȿᴘʌʀᴋ Cᴏʍʍᴜɴɪᴛʏ'
+global.packname = '【✧】Pantheon-Bot ❖'
+global.botname = 'Pantheon-Bot'
+global.wm = 'Pantheon-Bot'
+global.author = 'Pantheon-Bot'
+global.dev = 'Pantheon-Bot'
 global.errorm = 'Error: ${error.message}'
-global.nombrebot = 'MorchiBot - MD'
-global.textbot = `🐱 𝗠𝗢𝗥𝗖𝗛𝗜 𝗕𝗢𝗧 🐱`
+global.nombrebot = 'Pantheon Bot'
+global.textbot = `「 🏛 Pantheon - Bot 🏛 」`
 global.vs = '1.0.0'
 
 
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')
 
 
-global.repobot = 'https://github.com/CrxstianEscobar/MorchiBot'
-global.grupo = 'https://chat.whatsapp.com/FCS6htvAmlT7nq006lxU4I'
-global.comu = 'https://chat.whatsapp.com/Kn1pPVAO08pFRo7qJnKuh6'
-global.channel = 'https://whatsapp.com/channel/0029VauTE8AHltY1muYir31n'
-global.insta = 'https://www.instagram.com/morchi_yara'
+global.repobot = 'https://whatsapp.com/channel/0029Vb3ahtE96H4Lk7DfEU0B'
+global.grupo = 'https://chat.whatsapp.com/HvDCvNqXSiW19MFXJmWhoF'
+global.comu = 'https://whatsapp.com/channel/0029Vb3ahtE96H4Lk7DfEU0B'
+global.channel = 'https://whatsapp.com/channel/0029Vb3ahtE96H4Lk7DfEU0B'
+global.insta = 'https://whatsapp.com/channel/0029Vb3ahtE96H4Lk7DfEU0B'
 
 
-global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "543876577197-120363317332020195@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: 'MOONFORCE 乂 TEAM', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
+global.estilo = { key: {  fromMe: false, participant: `0@s.whatsapp.net`, ...(false ? { remoteJid: "584262668729-120363317332020195@g.us" } : {}) }, message: { orderMessage: { itemCount : -999999, status: 1, surface : 1, message: 'MOONFORCE 乂 TEAM', orderTitle: 'Bang', thumbnail: catalogo, sellerJid: '0@s.whatsapp.net'}}}
 
 
 global.cheerio = cheerio
