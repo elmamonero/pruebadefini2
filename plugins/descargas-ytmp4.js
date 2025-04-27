@@ -13,12 +13,12 @@ let handler = async (m, { conn, args, text }) => {
     m.react(rwait);  
 
     try {  
-        // Usando ytdl-core para obtener el video  
+        // Crear un stream del video  
         const stream = ytdl(text, { quality: 'highestvideo' });  
 
-        // Enviar el video directamente  
+        // Enviar el video directamente como un stream  
         await conn.sendMessage(m.chat, {  
-            video: { url: stream },  
+            video: stream,  
             mimetype: "video/mp4",  
             caption: `${dev}`, // Asegúrate de definir `dev` o eliminar esta línea si no se usa.  
         }, { quoted: m });  
