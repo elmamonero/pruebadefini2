@@ -504,9 +504,9 @@ global.dfail = (type, m, conn) => {
 let user2 = m.pushName || 'Anónimo'
 
 const msg = {
-rowner: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙖 𝙥𝙤𝙧 𝙚𝙡 𝙘𝙧𝙚𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙗𝙤𝙩.```', 
-owner: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙖 𝙥𝙤𝙧 𝙚𝙡 𝙙𝙚𝙨𝙖𝙧𝙧𝙤𝙡𝙡𝙖𝙙𝙤𝙧 𝙙𝙚𝙡 𝙗𝙤𝙩.```'', 
-mods: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙥𝙤𝙧 𝙡𝙤𝙨 𝙢𝙤𝙙𝙚𝙧𝙖𝙙𝙤𝙧𝙚𝙨 𝙙𝙚𝙡 𝙗𝙤𝙩.```', 
+rowner: '*🐈 Esta función solo puede ser usada por el actual Owner.*', 
+owner: '*🐈 Esta función solo puede ser usada por mi Desarrollador.*', 
+mods: '*🐈 Esta función solo puede ser usada los moderadores del bot.*', 
 premium: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙥𝙤𝙧 𝙪𝙨𝙪𝙖𝙧𝙞𝙤𝙨 𝙥𝙧𝙚𝙢𝙞𝙪𝙢.```', 
 group: '```🌙 𝙀𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙪𝙩𝙞𝙡𝙞𝙯𝙖𝙙𝙤 𝙚𝙣 𝙜𝙧𝙪𝙥𝙤𝙨.```', 
 private: '```🌙 𝙀𝙨𝙩𝙖 𝙛𝙪𝙣𝙘𝙞𝙤𝙣 𝙨𝙤𝙡𝙤 𝙥𝙪𝙚𝙙𝙚 𝙨𝙚𝙧 𝙚𝙟𝙚𝙘𝙪𝙩𝙖𝙙𝙖 𝙚𝙣 𝙢𝙞 𝙘𝙝𝙖𝙩 𝙥𝙧𝙞𝙫𝙖𝙙𝙤.```', 
