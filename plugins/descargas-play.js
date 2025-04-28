@@ -14,7 +14,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
         let video = searchResults[0];
         let thumbnail = await (await fetch(video.miniatura)).buffer();
 
-        let messageText = `\```◜YouTube - Download◞```\`\n\n`;  
+        let messageText = `◜YouTube - Download◞\n\n`;    
         messageText += `≡ *⏳ 'Duración'*  ${video.duracion || 'No disponible'}\n`;  
         messageText += `≡ *🌴 'Autor'* ${video.canal || 'Desconocido'}\n`;  
         messageText += `≡ *📆 'Publicado'* ${convertTimeToSpanish(video.publicado)}\n`;  
