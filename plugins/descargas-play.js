@@ -14,12 +14,11 @@ const handler = async (m, { conn, args, usedPrefix }) => {
         let video = searchResults[0];
         let thumbnail = await (await fetch(video.miniatura)).buffer();
 
-        let messageText = `\```◜YouTube - Download◞```\`\n\n`;
-        messageText += `*${video.titulo}*\n\n`;
-        messageText += `≡ *⏳ `Duración`*  ${video.duracion || 'No disponible'}\n`;
-        messageText += `≡ *🌴 `Autor`* ${video.canal || 'Desconocido'}\n`;
-        messageText += `≡ *📆 `Publicado`* ${convertTimeToSpanish(video.publicado)}\n`;
-        messageText += `≡ *🌵 `Url`* ${video.url}\n`;
+        let messageText = `\```◜YouTube - Download◞```\`\n\n`;  
+        messageText += `≡ *⏳ 'Duración'*  ${video.duracion || 'No disponible'}\n`;  
+        messageText += `≡ *🌴 'Autor'* ${video.canal || 'Desconocido'}\n`;  
+        messageText += `≡ *📆 'Publicado'* ${convertTimeToSpanish(video.publicado)}\n`;  
+        messageText += `≡ *🌵 'Url'* ${video.url}\n`;    
 
         await conn.sendMessage(m.chat, {
             image: thumbnail,
