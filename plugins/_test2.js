@@ -1,9 +1,9 @@
 import fetch from 'node-fetch';  
 
-let handler = async (m, { args, conn, command, reply }) => {  
+let handler = async (m, { args, conn, command }) => {  
   if (!args[0]) {  
     console.log('No se proporcionó el enlace de YouTube.');  
-    return reply(`🍭 Ingresa un enlace de YouTube.`);  
+    return m.reply(`🍭 Ingresa un enlace de YouTube.`);  
   }  
 
   const videoUrl = args[0];  
@@ -30,7 +30,7 @@ let handler = async (m, { args, conn, command, reply }) => {
         { quoted: m }  
       );  
     } else {  
-      reply('No se pudo obtener el archivo de audio.');  
+      m.reply('No se pudo obtener el archivo de audio.');  
     }  
 
     // Solicitud a prueba2 (MP4)  
@@ -51,11 +51,11 @@ let handler = async (m, { args, conn, command, reply }) => {
         { quoted: m }  
       );  
     } else {  
-      reply('No se pudo obtener el video.');  
+      m.reply('No se pudo obtener el video.');  
     }  
   } catch (error) {  
     console.error('Error:', error);  
-    reply('Hubo un error al procesar la solicitud.');  
+    m.reply('Hubo un error al procesar la solicitud.');  
   }  
 };  
 
