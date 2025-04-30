@@ -7,7 +7,7 @@ let handler = async (m, { conn }) => {
     conn.sendMessage(m.chat, { 
         image: { url: imageUrl }, 
         caption: 'Hola usuario de WhatsApp esto solo es un test de botones que no tiene nada que ver con lo demás.', 
-        footer: '© Տһᥲძᨣᥕ Ɓᨣƚ Uᥣ𝗍rᥲ', 
+        footer: '', 
         buttons: [
             {
                 buttonId: `.ping`,
