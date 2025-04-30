@@ -60,9 +60,6 @@ let handler = async (m, { conn, args, command }) => {
       return m.reply('Error al obtener el video.');  
     }  
 
-    // Descomentar si quieres verificar la respuesta  
-    // console.log('Video result:', video);  
-
     let data;  
     try {  
       data = await fg.ytmp4(args[0]);  
@@ -80,8 +77,20 @@ let handler = async (m, { conn, args, command }) => {
       return m.reply('No Hubo Resultados');  
     }  
 
-    console.log('Enviando archivo MP4...');  
-    await conn.sendMessage(m.chat, { document: { url: url }, fileName: `${pene.data.title}.mp4`, caption: `> ${wm}`, mimetype: 'video/mp4' }, { quoted: m });    
+    // Aquí verificamos qué datos estamos enviando  
+    console.log('Preparando para enviar archivo MP4:', {  
+      url: url,  
+      filename: `${pene.data.title}.mp4`,  
+      caption: `> ${wm}`,  
+      mimetype: 'video/mp4'  
+    });  
+
+    try {  
+      await conn.sendMessage(m.chat, { document: { url: url }, filename: `${pene.data.title}.mp4`, caption: `> ${wm}`, mimetype: 'video/mp4' }, { quoted: m });  
+      console.log('Mensaje MP4 enviado correctamente.');  
+    } catch (err) {  
+      console.error('Error enviando MP4:', err);  
+    }  
   }  
 }  
 
