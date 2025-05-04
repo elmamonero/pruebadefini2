@@ -2,37 +2,64 @@ import fetch from 'node-fetch';
 import axios from 'axios';
 
 let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-  if (!text) return conn.reply(m.chat, `*[ 🎧 ] Hace falta el URL de SoundCloud.*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} https://soundcloud.com/twice-57013/one-spark`, m, rcanal);
+  if (!args || args.length === 0) {
+    return conn.reply(m.chat, `*[ 🎧 ] Hace falta el búsqueda para SoundCloud.*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} cruz trueno`, m);
+  }
+
+  const searchWords = args.join(' ');
+  console.log(`[INFO] Búsqueda de SoundCloud: ${searchWords}`);
 
   await m.react('🕒');
+
   try {
-    // Llamada a la API con la URL proporcionada
-    const soundcloudApiUrl = `https://delirius-apiofc.vercel.app/download/soundcloud?url=${encodeURIComponent(text)}`;
+    // Buscar en API de SoundCloud
+    const soundcloudSearchUrl = `https://apis-starlights-team.koyeb.app/starlight/soundcloud-search?text=${encodeURIComponent(searchWords)}`;
+    console.log(`[DEBUG] Buscando en SoundCloud: ${soundcloudSearchUrl}`);
+
+    const searchResponse = await fetch(soundcloudSearchUrl);
+    const searchJson = await searchResponse.json();
+
+    if (!searchJson || !searchJson.length || !searchJson[0].url) {
+      console.log(`[ERROR] No se encontró resultado para: ${searchWords}`);
+      return conn.reply(m.chat, `No se encontró ningún resultado para: ${searchWords}`, m);
+    }
+
+    const { url: trackUrl, title } = searchJson[0];
+    console.log(`[INFO] Encontré: ${title} | URL: ${trackUrl}`);
+
+    // API para obtener descarga directa
+    const soundcloudApiUrl = `https://delirius-apiofc.vercel.app/download/soundcloud?url=${encodeURIComponent(trackUrl)}`;
+    console.log(`[DEBUG] Obteniendo enlace de descarga: ${soundcloudApiUrl}`);
+
     const apiResponse = await fetch(soundcloudApiUrl);
     const json = await apiResponse.json();
 
     if (!json || !json.link) {
-      // Si no hay enlace en la respuesta
-      return conn.reply(m.chat, `❌ No se pudo obtener el audio de SoundCloud. Verifica el enlace y vuelve a intentarlo.`, m);
+      console.log(`[ERROR] No se pudo obtener el enlace directo para: ${trackUrl}`);
+      return conn.reply(m.chat, `No se pudo obtener el audio de SoundCloud. Verifica el enlace y vuelve a intentarlo.`, m);
     }
 
-    const { link: dl_url, title } = json;
-    const audio = await getBuffer(dl_url);
+    const { link: dl_url, title: apiTitle } = json;
+    console.log(`[INFO] enlace de descarga: ${dl_url}`);
 
-    let txt = `*${title}*\n`;
-    txt += `${text}\n\n`;
+    const audioBuffer = await getBuffer(dl_url);
+    console.log(`[INFO] Buffer de audio listo.`);
+
+    let txt = `*${apiTitle}*\n`;
+    txt += `${trackUrl}\n\n`;
     txt += `> [ ℹ️ ] sᥱ ᥱs𝗍ᥲ́ ᥱᥒ᥎іᥲᥒძ᥆ ᥱᥣ ᥲᥙძі᥆ ᥱs⍴ᥱrᥱ ᥙᥒ m᥆mᥱᥒ𝗍᥆...\n> sі ᥒ᥆ sᥱ ᥱᥒ᥎іᥲ ⍴rᥙᥱᑲᥱ ᥴ᥆᥅ ᥱᥣ ᥴ᥆᥎  \n*Descargando...*`;
 
-    await conn.reply(m.chat, txt, fkontak, m);
-    await conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: `${title}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
-    
+    await conn.reply(m.chat, txt, m);
+    await conn.sendMessage(m.chat, { audio: { url: dl_url }, fileName: `${apiTitle}.mp3`, mimetype: 'audio/mpeg' }, { quoted: m });
+    console.log(`[INFO] Audio enviado correctamente.`);
+
   } catch (e) {
+    console.log(`[ERROR] ${e}`);
     await m.react('❌');
-    console.error(e);
   }
 };
 
-handler.help = ['splay', 'soundcloud'];
+handler.help = ['soundcloudtest'];
 handler.tags = ['descargas'];
 handler.command = ['soundcloudtest'];
 handler.register = true;
@@ -53,6 +80,6 @@ const getBuffer = async (url, options) => {
     });
     return res.data;
   } catch (e) {
-    console.log(`Error: ${e}`);
+    console.log(`Error en getBuffer: ${e}`);
   }
 };
