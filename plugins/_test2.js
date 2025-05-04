@@ -8,7 +8,8 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
   const searchQuery = args.join(' ');
   console.log(`[INFO] Búsqueda en API: ${searchQuery}`);
 
-  await m.react('🕒');
+  // Comentamos o eliminamos la reacción para evitar error
+  // await m.react('🕒');
 
   try {
     // Buscar en API
@@ -26,7 +27,6 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
     const { url: trackUrl, title } = searchJson[0];
     console.log(`[INFO] Encontrado: ${title} | URL: ${trackUrl}`);
 
-    // Obtenemos la API que devuelve el enlace `.m3u8`
     const apiUrl = `https://delirius-apiofc.vercel.app/download/soundcloud?url=${encodeURIComponent(trackUrl)}`;
     console.log(`[DEBUG] Solicitando enlace: ${apiUrl}`);
 
@@ -34,14 +34,14 @@ let handler = async (m, { conn, command, args, text, usedPrefix }) => {
     const dataApi = await resApi.json();
 
     if (!dataApi || !dataApi.url) {
-      console.log(`[ERROR] No se pudo obtener el enlace `.m3u8` para: ${trackUrl}`);
-      return conn.reply(m.chat, `No se pudo obtener el audio. Es posible que este contenido no esté disponible para descarga.\n\nTítulo: ${title}\nEnlace: ${trackUrl}`, m);
+      console.log(`[ERROR] No se pudo obtener el enlace ".m3u8" para: ${trackUrl}`);
+      return conn.reply(m.chat, `No se pudo obtener el stream. Es posible que este contenido no esté disponible.\n\nTítulo: ${title}\nEnlace: ${trackUrl}`, m);
     }
 
     const { url: m3u8Url, title: apiTitle } = dataApi;
     console.log(`[INFO] Enlace de streaming: ${m3u8Url}`);
 
-    // Envía la info y el enlace
+    // Envío de info y enlace en texto
     await conn.reply(m.chat, `
 🔊 *${apiTitle}*
 📶 Reproduce en formato `.m3u8` (requiere reproductor compatible)
@@ -53,11 +53,10 @@ ${searchJson[0].imageURL}
 🎤 Autor: ${searchJson[0].author.username}
 `, m);
 
-    console.log(`[INFO] Información compartida.`);
-
   } catch (e) {
     console.log(`[ERROR] ${e}`);
-    await conn.react('❌');
+    // Si deseas, puedes enviar mensaje de error
+    // await conn.reply(m.chat, `Error: ${e.message}`, m);
   }
 };
 
