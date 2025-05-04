@@ -1,68 +1,52 @@
-import fetch from 'node-fetch';
+import axios from "axios";
 
-let handler = async (m, { conn, command, args, text, usedPrefix }) => {
-  if (!args || args.length === 0) {
-    return conn.reply(m.chat, `*[ 🎧 ] Hace falta la búsqueda para SoundCloud.*\n\n*[ 💡 ] Ejemplo:* ${usedPrefix + command} cruz trueno`, m);
-  }
+const handler = async (m, { conn, text }) => {
+  // Define las constantes con los textos en español o en tu idioma preferido
+  const tradutorTexto1 = "Por favor, proporciona el texto para buscar.";
+  const tradutorTexto3 = "Error al obtener el sonido de SoundCloud.";
 
-  const searchQuery = args.join(' ');
-  console.log(`[INFO] Búsqueda en API: ${searchQuery}`);
-
-  // Comentamos o eliminamos la reacción para evitar error
-  // await m.react('🕒');
+  if (!text) throw tradutorTexto1;
 
   try {
-    // Buscar en API
-    const searchUrl = `https://apis-starlights-team.koyeb.app/starlight/soundcloud-search?text=${encodeURIComponent(searchQuery)}`;
-    console.log(`[DEBUG] URL de búsqueda: ${searchUrl}`);
+    const searchxd = await axios.get(global.BASE_API_DELIRIUS + "/search/soundcloud", {
+      params: {
+        q: text,
+        limit: 1
+      },
+    });
+    const shdata = searchxd.data.data[0];
+    const downloadzd = await axios.get(global.BASE_API_DELIRIUS + "/download/soundcloud", {
+      params: {
+        url: shdata.link,
+      },
+    });
+    const downloadres = downloadzd.data.data;
+    const soundcloudt = `*亗 S O U N D C L O U D*\n
+*› Titulo :* ${downloadres.title || "-"}
+*› Artista:* ${downloadres.author.username || "-"}
+*› Id :* ${downloadres.author.id || "-"}
+*› Followers :* ${downloadres.author.followers_count || "-"}
+*› Likes :* ${downloadres.author.likes_count || "-"}
+*› Publicado :* ${new Date(downloadres.author.created_at).toLocaleDateString() || "-"}
+*› Url :* ${shdata.link || "-"}`;
 
-    const searchRes = await fetch(searchUrl);
-    const searchJson = await searchRes.json();
+    const imgxd =
+      downloadres.imageURL.replace("t500x500", "t1080x1080") ||
+      downloadres.imageURL;
 
-    if (!searchJson || !searchJson.length || !searchJson[0].url) {
-      console.log(`[ERROR] No se encontró resultado para: ${searchQuery}`);
-      return conn.reply(m.chat, `No se encontró ningún resultado para: ${searchQuery}`, m);
-    }
-
-    const { url: trackUrl, title } = searchJson[0];
-    console.log(`[INFO] Encontrado: ${title} | URL: ${trackUrl}`);
-
-    const apiUrl = `https://delirius-apiofc.vercel.app/download/soundcloud?url=${encodeURIComponent(trackUrl)}`;
-    console.log(`[DEBUG] Solicitando enlace: ${apiUrl}`);
-
-    const resApi = await fetch(apiUrl);
-    const dataApi = await resApi.json();
-
-    if (!dataApi || !dataApi.url) {
-      console.log(`[ERROR] No se pudo obtener el enlace ".m3u8" para: ${trackUrl}`);
-      return conn.reply(m.chat, `No se pudo obtener el stream. Es posible que este contenido no esté disponible.\n\nTítulo: ${title}\nEnlace: ${trackUrl}`, m);
-    }
-
-    const { url: m3u8Url, title: apiTitle } = dataApi;
-    console.log(`[INFO] Enlace de streaming: ${m3u8Url}`);
-
-    // Envío de info y enlace en texto
-    await conn.reply(m.chat, `
-🔊 *${apiTitle}*
-📶 Reproduce en formato `.m3u8` (requiere reproductor compatible)
-📝 Enlace: ${m3u8Url}
-
-🖼️ Imagen del artista:
-${searchJson[0].imageURL}
-
-🎤 Autor: ${searchJson[0].author.username}
-`, m);
-
-  } catch (e) {
-    console.log(`[ERROR] ${e}`);
-    // Si deseas, puedes enviar mensaje de error
-    // await conn.reply(m.chat, `Error: ${e.message}`, m);
+    await conn.sendFile(m.chat, imgxd, "", soundcloudt, m);
+    await conn.sendMessage(
+      m.chat,
+      {
+        audio: { url: downloadres.url },
+        fileName: `${downloadres.title}.mp3`,
+        mimetype: "audio/mpeg",
+      },
+      { quoted: m },
+    );
+  } catch {
+    throw tradutorTexto3;
   }
 };
-
-handler.help = ['soundcloudtest'];
-handler.tags = ['descargas'];
-handler.command = ['soundcloudtest'];
-handler.register = true;
-
+handler.command = /^(soundcloud|cover)$/i;
 export default handler;
