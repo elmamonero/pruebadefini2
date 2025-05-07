@@ -211,12 +211,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       return;
   }
 
-  // Se actualizan las propiedades específicas cuando corresponda
-  if (type === 'antilink2') {
-    // Ya se actualizó en el case, solo confirmamos
-    // chat.antiLink2 ya fue actualizado arriba
-  }
-
   // Enviar la respuesta del estado
   await conn.sendMessage(m.chat, { 
     text: `*» 𝗢𝗣𝗖𝗜𝗢𝗡 |* ${type.toUpperCase()}\n` +
@@ -238,8 +232,5 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
   }, { quoted: fkontak });
 }
 
-handler.help = ['enable', 'disable'];
-handler.tags = ['owner'];
-handler.command = ['enable', 'disable', 'on', 'off', '1', '0'];
-
+// La declaración de exportación debe estar al final del archivo
 export default handler;
