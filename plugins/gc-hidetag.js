@@ -1,4 +1,4 @@
-/*import {generateWAMessageFromContent} from '@whiskeysockets/baileys';
+import {generateWAMessageFromContent} from '@whiskeysockets/baileys';
 import * as fs from 'fs';
 const handler = async (m, {conn, text, participants, isOwner, isAdmin}) => {
   try {
@@ -38,7 +38,7 @@ handler.tags = ['gc'];
 handler.command = /^(hidetag|notify|notificar|notifi|noti|n|hidet)$/i;
 handler.group = true;
 handler.admin = true;
-export default handler;*/
+export default handler;
 
 import MessageType from '@whiskeysockets/baileys'
 import { generateWAMessageFromContent } from '@whiskeysockets/baileys'
