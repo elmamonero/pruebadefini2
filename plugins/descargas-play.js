@@ -36,7 +36,7 @@ const handler = async (m, { conn, args, usedPrefix }) => {
                     type: 1,
                 },
                 {
-                    buttonId: `${usedPrefix}ytmp4doc ${video.url}`,
+                    buttonId: `${usedPrefix}ytdl ${video.url}`,
                     buttonText: { displayText: 'Vídeo' },
                     type: 1,
                 }
