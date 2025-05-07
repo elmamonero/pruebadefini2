@@ -25,20 +25,15 @@ const handler = async (m, {
 
         if (!res.data.download_url) throw new Error('Error link');
 
-        // Texto con formato deseado
+        // Descargamos el archivo en Buffer
+        const response = await axios.get(res.data.download_url, { responseType: 'arraybuffer' });
+        const buffer = response.data;
+
+        // Texto del mensaje
         const caption = `\`\`\`◜YouTube - MP4◞\`\`\`\n\n${res.data.title}\n≡ *🌴 URL:* ${args[0]}\n≡ *⚖ Peso:* ${await formatSize(res.data.size)}\n`;
 
-        // Enviar como documento y nombe basado en el título
-        await conn.sendMessage(m.chat, {
-            document: {
-                url: res.data.download_url
-            },
-            mimetype: 'video/mp4',
-            filename: `${res.data.title}.mp4`,
-            caption: caption
-        }, {
-            quoted: m
-        });
+        // Enviamos el archivo como documento con el nombre correcto
+        await conn.sendFile(m.chat, buffer, `${res.data.title}.mp4`, caption, m);
 
     } catch (er) {
         conn.reply(m.chat, `${er.message || 'Error en la api'}`, m);
