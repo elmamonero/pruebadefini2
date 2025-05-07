@@ -27,8 +27,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
   }
 };
 
-handler.help = ['ytmp4doc'];
-handler.command = ['ytmp4doc'];
+handler.help = ['testdoc'];
+handler.command = ['testdoc'];
 handler.tags = ['dl'];
 
 export default handler;
