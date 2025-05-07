@@ -25,13 +25,17 @@ const handler = async (m, {
 
         if (!res.data.download_url) throw new Error('Error link');
 
+        // Texto con formato deseado
+        const caption = `\`\`\`◜YouTube - MP4◞\`\`\`\n\n${res.data.title}\n≡ *🌴 URL:* ${args[0]}\n≡ *⚖ Peso:* ${await formatSize(res.data.size)}\n`;
+
+        // Enviar como documento y nombe basado en el título
         await conn.sendMessage(m.chat, {
             document: {
                 url: res.data.download_url
             },
             mimetype: 'video/mp4',
             filename: `${res.data.title}.mp4`,
-            caption: `Listo: ${res.data.title}`
+            caption: caption
         }, {
             quoted: m
         });
@@ -42,7 +46,19 @@ const handler = async (m, {
 };
 handler.help = ['test4'];
 handler.tags = ['downloader'];
-handler.command = /^test4$/i; // Aquí cambias el comando a 'test4'
+handler.command = /^test4$/i;
 handler.limit = true;
 
 export default handler;
+
+// Función auxiliar para formatear el tamaño
+async function formatSize(bytes) {
+    const units = ['B', 'KB', 'MB', 'GB', 'TB'];
+    let i = 0;
+    if (!bytes || isNaN(bytes)) return 'Desconocido';
+    while (bytes >= 1024 && i < units.length - 1) {
+        bytes /= 1024;
+        i++;
+    }
+    return `${bytes.toFixed(2)} ${units[i]}`;
+}
