@@ -17,11 +17,11 @@ const handler = async (m, { conn, args, usedPrefix }) => {
   try {
     const api = `https://ytdlpyton.nvlgroup.my.id/download/?url=${encodeURIComponent(args[0])}&mode=url`;
 
-    await conn.reply(m.chat, '✧ Espere...', m);
+    // Sin mensaje "espere"
 
     // Obtener datos de la API
     const res = await axios.get(api, {
-        headers: { 'accept': 'application/json' }
+      headers: { 'accept': 'application/json' }
     });
 
     if (!res.data.download_url) throw new Error('Error link');
