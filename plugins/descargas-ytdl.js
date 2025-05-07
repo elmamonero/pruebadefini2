@@ -63,10 +63,8 @@ async function formatSize(bytes) {
     }
     return `${bytes.toFixed(2)} ${units[i]}`;
 }
-
-handler.help = ['test4'];
+handler.help = ['yt link'];
 handler.tags = ['downloader'];
-handler.command = /^test4$/i;
+handler.command = /^(yt|ytdl)$/i;
 handler.limit = true;
-
 export default handler;
