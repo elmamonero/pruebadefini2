@@ -87,6 +87,12 @@ export async function handler(chatUpdate) {
                     chat.isBanned = false
                 if (!('welcome' in chat))
                     chat.welcome = false
+                if (!('sWelcome' in chat))
+                    chat.sWelcome = ''
+                if (!('sBye' in chat))
+                    chat.sBye = ''
+                if (!('sKick' in chat))
+                    chat.sKick = ''
                 if (!('audios' in chat))
                     chat.audios = false
                 if (!('detect' in chat))
@@ -119,6 +125,9 @@ export async function handler(chatUpdate) {
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
                     welcome: false,
+                    sWelcome: '',
+                    sBye: '',
+                    sKick: '',
                     delete: false,
                     audios: false,
                     detect: true,
@@ -400,8 +409,8 @@ global.db.data.users[m.sender].spam = new Date * 1
                     console.error(e)
                     if (e) {
                         let text = format(e)
-                        for (let key of Object.values(global.APIKeys))
-                            text = text.replace(new RegExp(key, 'g'), '#HIDDEN#')
+                        /*for (let key of Object.values(global.APIKeys))
+                            text = text.replace(new RegExp(key, 'g'), '#HIDDEN#')*/
                         m.reply(text)
                     }
                 } finally {
