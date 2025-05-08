@@ -1,6 +1,6 @@
 {
 "name": "PantheonBot",
-"version": "1.0.0",
+"version": "3.0.0",
 "description": "WhatsApp Bot Multi Device",
 "main": "main.js",
 "type": "module",
@@ -18,21 +18,21 @@
 "eslint": "eslint .",
 "eslintfix": "eslint --fix ."
 },
-"homepage": "https://github.com/CrxstianEscobar/MorchiBot",
+"homepage": "https://github.com/CrxstianEscobar/ShadowUltra-MD",
 "author": {
 "name": "Cristian Escobar"
 },
 "repository": {
 "type": "git",
-"url": "git+https://github.com/CrxstianEscobar/MorchiBot.git"
+"url": "git+https://github.com/CrxstianEscobar/ShadowUltra-MD.git"
 },
 "bugs": {
-"url": "https://github.com/CrxstianEscobar/MorchiBot/issues"
+"url": "https://github.com/CrxstianEscobar/ShadowUltra-MD/issues"
 },
 "license": "GPL-3.0-or-later",
 "dependencies": {
 "@vitalets/google-translate-api": "^8.0.0",
-"@whiskeysockets/baileys": "github:ds6/bails",
+"@whiskeysockets/baileys": "github:Izumi-kzx/bails",
 "google-libphonenumber": "latest",
 "@adiwajshing/keyed-db": "^0.2.4",
 "@bochilteam/scraper": "^4.2.4",
