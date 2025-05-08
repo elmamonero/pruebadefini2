@@ -27,7 +27,7 @@ global.dev = 'Pantheon-Bot'
 global.errorm = 'Error: ${error.message}'
 global.nombrebot = 'Pantheon Bot'
 global.textbot = `「 🏛 Pantheon - Bot 🏛 」`
-global.vs = '1.0.0'
+global.vs = '3.0.0'
 
 
 global.catalogo = fs.readFileSync('./media/catalogo.jpg')
