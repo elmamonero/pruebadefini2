@@ -8,16 +8,16 @@ const handler = async (m, { conn, text, participants }) => {
     const mime = (quoted.msg || quoted).mimetype || '';
     const isMedia = /image|video|sticker|audio/.test(mime);
 
-    // Mantener el texto original y evitar reemplazos innecesarios
+    // Aseguramos que el texto adjunto se envíe correctamente
     const mensajeTexto = text && text.trim() !== '' ? text : '';
 
     if (isMedia) {
       var mediax = await quoted.download?.();
 
       if (quoted.mtype === 'imageMessage') {
-        conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: mensajeTexto }, { quoted: m });
+        conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: mensajeTexto || quoted.text || '' }, { quoted: m });
       } else if (quoted.mtype === 'videoMessage') {
-        conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: mensajeTexto }, { quoted: m });
+        conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: mensajeTexto || quoted.text || '' }, { quoted: m });
       } else if (quoted.mtype === 'audioMessage') {
         conn.sendMessage(m.chat, { audio: mediax, mentions: users, mimetype: 'audio/mpeg', fileName: `Hidetag.mp3` }, { quoted: m });
       } else if (quoted.mtype === 'stickerMessage') {
