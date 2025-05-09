@@ -5,13 +5,13 @@ const handler = async (m, { conn, text, participants }) => {
   try {
     const users = participants.map((u) => conn.decodeJid(u.id));
     const quoted = m.quoted ? m.quoted : m;
-    const mime = (quoted.msg || quoted).mimetype || '';
+    const mime = quoted?.mimetype || '';
     const isMedia = /image|video|sticker|audio/.test(mime);
 
-    // Definir mensaje correctamente para evitar vacíos
-    const mensajeTexto = text && text.trim() !== '' ? text : null;
+    // Extraer texto correctamente al responder a otro mensaje
+    const mensajeTexto = text && text.trim() !== '' ? text : quoted.text || '';
 
-    if (isMedia && mensajeTexto) {
+    if (isMedia) {
       var mediax = await quoted.download?.();
 
       if (quoted.mtype === 'imageMessage') {
@@ -23,7 +23,8 @@ const handler = async (m, { conn, text, participants }) => {
       } else if (quoted.mtype === 'stickerMessage') {
         conn.sendMessage(m.chat, { sticker: mediax, mentions: users }, { quoted: m });
       }
-    } else if (!isMedia && mensajeTexto) {
+    } else {
+      // Si es texto, asegurarse de que se envíe correctamente
       await conn.relayMessage(m.chat, {
         extendedTextMessage: {
           text: mensajeTexto,
