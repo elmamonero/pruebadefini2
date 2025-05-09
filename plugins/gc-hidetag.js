@@ -8,22 +8,22 @@ const handler = async (m, { conn, text, participants }) => {
     const mime = (quoted.msg || quoted).mimetype || '';
     const isMedia = /image|video|sticker|audio/.test(mime);
 
-    // Aseguramos que el texto adjunto se envíe correctamente
-    const mensajeTexto = text && text.trim() !== '' ? text : '';
+    // Definir mensaje correctamente para evitar vacíos
+    const mensajeTexto = text && text.trim() !== '' ? text : null;
 
-    if (isMedia) {
+    if (isMedia && mensajeTexto) {
       var mediax = await quoted.download?.();
 
       if (quoted.mtype === 'imageMessage') {
-        conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: mensajeTexto || quoted.text || '' }, { quoted: m });
+        conn.sendMessage(m.chat, { image: mediax, mentions: users, caption: mensajeTexto }, { quoted: m });
       } else if (quoted.mtype === 'videoMessage') {
-        conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: mensajeTexto || quoted.text || '' }, { quoted: m });
+        conn.sendMessage(m.chat, { video: mediax, mentions: users, mimetype: 'video/mp4', caption: mensajeTexto }, { quoted: m });
       } else if (quoted.mtype === 'audioMessage') {
         conn.sendMessage(m.chat, { audio: mediax, mentions: users, mimetype: 'audio/mpeg', fileName: `Hidetag.mp3` }, { quoted: m });
       } else if (quoted.mtype === 'stickerMessage') {
         conn.sendMessage(m.chat, { sticker: mediax, mentions: users }, { quoted: m });
       }
-    } else {
+    } else if (!isMedia && mensajeTexto) {
       await conn.relayMessage(m.chat, {
         extendedTextMessage: {
           text: mensajeTexto,
