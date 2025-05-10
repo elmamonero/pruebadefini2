@@ -37,6 +37,7 @@ ${readMore}
 ⠞🌷੭‎ ${usedPrefix}menunsfw
 ⠞🌷੭‎ ${usedPrefix}menuowner
 ⠞🌷੭‎ ${usedPrefix}menulogos
+⠞🌷੭‎ ${usedPrefix}menuff
 
 ↷✦; \`INFO BOT\` ❞ 🍄︵᷼  
 ⠞🍄੭‎ ${usedPrefix}totalf
@@ -86,14 +87,6 @@ ${readMore}
 ⠞🍮੭‎ ${usedPrefix}gnula *texto*
 ⠞🍮੭‎ ${usedPrefix}mercadolibre *texto*
 
-↷✦; \`LISTAS\` ❞ 📜︵᷼ 
-⠞📜੭‎ ${usedPrefix}v4fem *hr + p*
-⠞📜੭‎ ${usedPrefix}v4masc *hr + p*
-⠞📜੭‎ ${usedPrefix}v4mixto *hr + p*
-⠞📜੭‎ ${usedPrefix}v6fem *hr + p*
-⠞📜੭‎ ${usedPrefix}v6masc *hr + p*
-⠞📜੭‎ ${usedPrefix}v6mixto *hr + p*
-
 ↷✦; \`FRASES\` ❞ 🌻︵᷼ 
 ⠞🌻੭‎ ${usedPrefix}piropo
 ⠞🌻੭‎ ${usedPrefix}consejo
@@ -141,6 +134,8 @@ ${readMore}
 ⠞🌿੭‎ Admins *texto*
 ⠞🌿੭‎ ${usedPrefix}todos *texto*
 ⠞🌿੭‎ ${usedPrefix}setwelcome *texto*
+⠞🌿੭‎ ${usedPrefix}setbye *texto*
+⠞🌿੭‎ ${usedPrefix}setkick *texto*
 ⠞🌿੭‎ ${usedPrefix}groupdesc *texto*
 ⠞🌿੭‎ ${usedPrefix}setbye *texto*
 ⠞🌿੭‎ ${usedPrefix}promote *@tag*
