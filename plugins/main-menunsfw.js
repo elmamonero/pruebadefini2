@@ -1,30 +1,42 @@
 import fetch from 'node-fetch';
 
-const handler = async (m, {conn, usedPrefix, text, isPrems}) => {
-
+const handler = async (m, { conn, usedPrefix, isPrems }) => {
   try {
-    const imgUrl = 'https://files.catbox.moe/dmazrr.jpg';
-    const more = String.fromCharCode(8206);
-    const readMore = more.repeat(850);
+    await m.react('🧡');
+
+    let img = 'https://files.catbox.moe/kmfqee.jpg';
+    let insta = 'https://chat.whatsapp.com/HvDCvNqXSiW19MFXJmWhoF';
+
+    const _uptime = process.uptime() * 1000;
+    const uptime = clockString(_uptime);
+
+    const user = global.db.data.users[m.sender] || {};
+    const { money = 0, joincount = 0, exp = 0, limit = 0, level = 0, role = '' } = user;
+
+    let totalreg = Object.keys(global.db.data.users || {}).length;
+    let rtotalreg = Object.values(global.db.data.users || {}).filter(user => user.registered).length;
+
     const taguser = '@' + m.sender.split('@s.whatsapp.net')[0];
 
-    const str = `👋🏻 ¡Hᴏʟᴀ! ${taguser}
+    const botname = 'Pantheon Bot';
+
+    const text = `👋🏻 ¡Hᴏʟᴀ! ${taguser}
 Bɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ᴍᴇɴᴜ *ɴsғᴡ* 🔞
 
 \`\`\`${fechaHora}\`\`\`
 
-𓂂𓏸  𐅹੭੭   *\`SEARCH\`* 🪱 ᦡᦡ
+𓂂𓏸  𐅹੭੭   *\`ᑲᥙsᥴᥲძ᥆rᥱs\`* 🪱 ᦡᦡ
 ര ׄ⃟🪱˚ .xnxxsearch *texto*
 ര ׄ⃟🪱˚ .xvsearch *texto*
 ര ׄ⃟🪱˚ .phsearch *texto*
 ര ׄ⃟🪱˚ .r34 *texto*
 
-𓂂𓏸  𐅹੭੭   *\`DOWNLOAD\`* 🧋ᦡᦡ
+𓂂𓏸  𐅹੭੭   *\`ძᥱsᥴᥲrgᥲs\`* 🧋ᦡᦡ
 ര ׄ⃟🧋˚ .xnxxdl *ulr*
 ര ׄ⃟🧋˚ .xvdl *url*
 ര ׄ⃟🧋˚ .phdl *url*
 
-𓂂𓏸  𐅹੭੭   *\`GIFS\`* 🦪 ᦡᦡ
+𓂂𓏸  𐅹੭੭   *\`gі𝖿s\`* 🦪 ᦡᦡ
 ര ׄ⃟🦪˚ .follar *@tag*
 ര ׄ⃟🦪˚ .coger *@tag*
 ര ׄ⃟🦪˚ .coger2 *@tag*
@@ -44,7 +56,7 @@ Bɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ᴍᴇɴᴜ *ɴsғᴡ* 🔞
 ര ׄ⃟🦪˚ .manosear *@tag*
 ര ׄ⃟🦪˚ .lesbianas *@tag*
 
-𓂂𓏸  𐅹੭੭   *\`CONTENIDO\`* 🍒 ᦡᦡ
+𓂂𓏸  𐅹੭੭   *\`ᥴ᥆ᥒ𝗍ᥱᥒіძ᥆\`* 🍒 ᦡᦡ
 ര ׄ⃟🍒˚ .pack
 ര ׄ⃟🍒˚ .pack2
 ര ׄ⃟🍒˚ .pack3
@@ -74,16 +86,27 @@ Bɪᴇɴᴠᴇɴɪᴅᴏ ᴀʟ ᴍᴇɴᴜ *ɴsғᴡ* 🔞
 ര ׄ⃟🍒˚ .imagenlesbians
 ര ׄ⃟🍒˚ .pene
 ര ׄ⃟🍒˚ .porno
-ര ׄ⃟🍒˚ .pechos
+ര ׄ⃟🍒˚ .pechos`.trim();
 
-> © mᥱᥒᥙ *ᥒs𝖿ᥕ* ᑲᥡ  ᥴrіss.᥎᥊`.trim();
+    conn.sendMessage(m.chat, {
+      text: text,
+      contextInfo: {
+        mentionedJid: conn.parseMention(text),
+        isForwarded: true,
+        forwardingScore: 999,
+        externalAdReply: {
+          title: '',
+          body: 'Pantheon Bot',
+          thumbnail: await (await fetch(img)).buffer(),
+          sourceUrl: insta,
+          mediaType: 1,
+          renderLargerThumbnail: true
+        }
+      }
+    }, { quoted: fkontak });
 
-    conn.sendMessage(m.chat, { image: { url: imgUrl }, caption: str, mentions: [m.sender] }, { quoted: fkontak });
-
-await conn.sendMessage(m.chat, { react: { text: '🔥', key: m.key } });
-
-  } catch {
-    conn.reply(m.chat,'*[ ℹ️ ] Error al enviar el menú.*\n\n> ${e}', m);
+  } catch (e) {
+    conn.reply(m.chat, '❎ Error en el comando. Inténtalo más tarde.', m);
   }
 };
 
@@ -92,3 +115,12 @@ handler.command = /^(menunsfw|comandosnsfw|menuhorny|hornymenu|labiblia|menu18|m
 handler.fail = null;
 
 export default handler;
+
+const more = String.fromCharCode(8206)
+const readMore = more.repeat(4001)
+function clockString(ms) {
+  const h = isNaN(ms) ? '--' : Math.floor(ms / 3600000);
+  const m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60;
+  const s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60;
+  return [h, m, s].map((v) => v.toString().padStart(2, 0)).join(':');
+}
