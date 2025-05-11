@@ -25,7 +25,7 @@ const handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
     const isMedia = /image|video|sticker|audio/.test(mime);
     const more = String.fromCharCode(8206);
     const masss = more.repeat(850);
-    const htextos = `${text ? text : '*Hola*'}`;
+    const htextos = `${text ? text : m.quoted ? m.quoted.text : '*Hola*'}`; // Ajuste para responder con el texto original
 
     if ((isMedia && quoted.mtype === 'imageMessage') && htextos) {
       var mediax = await quoted.download?.();
@@ -47,7 +47,7 @@ const handler = async (m, { conn, text, participants, isOwner, isAdmin }) => {
             contextInfo: {
               mentionedJid: users,
               externalAdReply: {
-                thumbnail: 'https://files.catbox.moe/kmfqee.jpg', // Imagen proporcionada por el usuario
+                thumbnail: 'https://files.catbox.moe/kmfqee.jpg', // Imagen proporcionada
                 sourceUrl: 'https://whatsapp.com/channel/0029Vb1AFK6HbFV9kaB3b13W'
               }
             }
