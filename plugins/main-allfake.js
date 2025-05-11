@@ -36,7 +36,7 @@ global.creador = 'Wa.me/584262668729'
 global.botreal = `${(conn.user.jid == global.conn.user.jid ? 'Oficial' : 'Sub-Bot')}`
 global.ofcbot = `${conn.user.jid.split('@')[0]}`
 global.asistencia = 'Wa.me/584262668729'
-global.namech = '˙˒𖥻˚𝐂𝐫𝐨𝐰𝐁𝐨𝐭 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥﹋꥟'
+global.namech = '˒𖥻˚𝐏𝐀𝐍𝐓𝐇𝐄𝐎𝐍 - 𝐂𝐡𝐚𝐧𝐧𝐞𝐥﹋꥟'
 global.namechannel2 = 'Pantheon Bot'
 global.namegrupo = 'シ︎ Pantheon-BOT '
 global.namecomu = '『𝗚𝗿𝘂𝗽𝗼 𝗢𝗳𝗶𝗰𝗶𝗮𝗹 PantheonBot✯』'
