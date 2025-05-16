@@ -8,16 +8,15 @@ import axios from 'axios'
 import moment from 'moment-timezone' 
 
 global.owner = [
-   ['584262668729', 'Pantheon', true]
    ['526567044256', 'Pantheon', true]
 ]
 
 global.creadorbot = [
-   ['584262668729', 'Pantheon', true]
+   ['526567044256', 'Pantheon', true]
 ]
 
-global.mods = ['584262668729']
-global.prems = ['584262668729']
+global.mods = ['526567044256']
+global.prems = ['526567044256']
 
 
 global.packname = '【✧】Pantheon-Bot ❖'
