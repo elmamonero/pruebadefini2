@@ -9,6 +9,7 @@ import moment from 'moment-timezone'
 
 global.owner = [
    ['584262668729', 'Pantheon', true]
+   ['526567044256', 'Pantheon', true]
 ]
 
 global.creadorbot = [
