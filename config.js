@@ -8,7 +8,9 @@ import axios from 'axios'
 import moment from 'moment-timezone' 
 
 global.owner = [
-   ['526567044256', 'Pantheon', true]
+   ['526567044256', 'Pantheon', true],
+   ['584262668729', 'Pantheon', true],
+   ['50662202222', 'Pantheon', true]
 ]
 
 global.creadorbot = [
