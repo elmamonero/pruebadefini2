@@ -7,7 +7,7 @@ let apkSession = new Map();
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   // Rama: Comando inicial .apk con término de búsqueda
   if (command === 'apk' && text) {
-await m.react('📭');
+    await m.react('📭');
     /*const reactionMessage = await conn.sendMessage(
       m.chat,
       { text: `🔍 Buscando la aplicación...` },
@@ -58,9 +58,11 @@ await m.react('📭');
       );
     } catch (error) {
       console.error("*❌ Error:*", error);
+      // Aquí debes tener una referencia a reactionMessage si quieres reaccionar
+      // Como no la definí arriba, lo omitiremos o puedes eliminar esa línea
       await conn.sendMessage(
         m.chat,
-        { react: { text: '❌', key: reactionMessage.key } },
+        { react: { text: '❌', key: m.key } },
         { quoted: m }
       );
       await conn.sendMessage(
@@ -104,6 +106,7 @@ await m.react('📭');
 
   // Caso: .apk sin término de búsqueda
   if (command === 'apk' && !text) {
+    const xdownload = "🔥"; // Aquí defines xdownload
     let example = `${usedPrefix}apk WhatsApp`;
     return conn.sendMessage(
       m.chat,
