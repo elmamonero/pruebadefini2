@@ -18,14 +18,16 @@ const fetchWithRetries = async (url, maxRetries = 2) => {
     }
   }
   throw new Error("No se pudo obtener la música después de varios intentos.");
-};
+}
+
+// Definir xdownload para usar en mensajes
+const xdownload = "🎶";
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-
- try {
-  if (!text || !text.trim()) {
-    return conn.reply(m.chat, `*${xdownload} Por favor, ingresa un título o URL de YouTube.*`, m);
-  }
+  try {
+    if (!text || !text.trim()) {
+      return conn.reply(m.chat, `*${xdownload} Por favor, ingresa un título o URL de YouTube.*`, m);
+    }
 
     await conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 
@@ -47,7 +49,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     // Reaccionar al mensaje original con ✅
     await conn.sendMessage(m.chat, { react: { text: "✅", key: m.key } });
-
   } catch (error) {
     console.error("Error:", error);
 
