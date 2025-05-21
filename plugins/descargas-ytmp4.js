@@ -1,12 +1,16 @@
 import fetch from "node-fetch";
 import axios from 'axios';
 
+// Definir xdownload para uso en mensajes
+const xdownload = "🎶";
+
 let handler = async (m, { conn, text, usedPrefix, command, args }) => {
   try {
     if (!text) {
       return conn.reply(m.chat, `*${xdownload} Por favor, ingresa la URL del vídeo de YouTube.*`, m);
     }
 
+    // Validar enlace de YouTube
     if (!/^(?:https?:\/\/)?(?:www\.|m\.|music\.)?youtu\.?be(?:\.com)?\/?.*(?:watch|embed)?(?:.*v=|v\/|\/)([\w\-_]+)\&?/.test(args[0])) {
       return m.reply(`*⚠️ Enlace inválido, por favor coloque un enlace válido de YouTube.*`);
     }
@@ -18,7 +22,16 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
     const cap = `\`\`\`◜YouTube - MP4◞\`\`\`\n\n*${json.title}*\n≡ *🌴 \`URL:\`* ${args[0]}\n≡ *⚖️ \`Peso:\`* ${sizeStr}`;
 
-    conn.sendFile(m.chat, await (await fetch(json.url)).buffer(), `${json.title}.mp4`, cap, m, null, { asDocument: true, mimetype: "video/mp4" });
+    // Enviar video como documento
+    conn.sendFile(
+      m.chat,
+      await (await fetch(json.url)).buffer(),
+      `${json.title}.mp4`,
+      cap,
+      m,
+      null,
+      { asDocument: true, mimetype: "video/mp4" }
+    );
 
     m.react('✅');
   } catch (e) {
