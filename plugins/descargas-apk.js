@@ -93,7 +93,7 @@ await m.react('📭');
         document: { url: downloadUrl },
         mimetype: "application/vnd.android.package-archive",
         fileName: `${app.name}.apk`,
-        caption: `> Pantheon-Bot`
+        caption: `> Shadow Ultra - MD`
       },
       { quoted: m }
     );
