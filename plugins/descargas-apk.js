@@ -95,7 +95,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         document: { url: downloadUrl },
         mimetype: "application/vnd.android.package-archive",
         fileName: `${app.name}.apk`,
-        caption: `> Shadow Ultra - MD`
+        caption: `> Pantheon Bot`
       },
       { quoted: m }
     );
