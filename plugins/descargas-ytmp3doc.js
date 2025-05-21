@@ -1,14 +1,10 @@
-
 import fetch from "node-fetch";
 import yts from "yt-search";
 
-// API en formato Base64
 const encodedApi = "aHR0cHM6Ly9hcGkudnJlZGVuLndlYi5pZC9hcGkveXRtcDM=";
 
-// Función para decodificar la URL de la API
 const getApiUrl = () => Buffer.from(encodedApi, "base64").toString("utf-8");
 
-// Función para obtener datos de la API con reintentos
 const fetchWithRetries = async (url, maxRetries = 2) => {
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     try {
@@ -24,29 +20,27 @@ const fetchWithRetries = async (url, maxRetries = 2) => {
   throw new Error("No se pudo obtener la música después de varios intentos.");
 };
 
-// Handler principal
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text || !text.trim()) return;
 
-  try {
-    // Reaccionar al mensaje inicial con 🕒
+ try {
+  if (!text || !text.trim()) {
+    return conn.reply(m.chat, `*${xdownload} Por favor, ingresa un título o URL de YouTube.*`, m);
+  }
+
     await conn.sendMessage(m.chat, { react: { text: "🕒", key: m.key } });
 
-    // Buscar en YouTube
     const searchResults = await yts(text.trim());
     const video = searchResults.videos[0];
-    if (!video) throw new Error("No se encontraron resultados.");
+    if (!video || !video.url) throw new Error("No se encontraron resultados válidos.");
 
-    // Obtener datos de descarga
     const apiUrl = `${getApiUrl()}?url=${encodeURIComponent(video.url)}`;
     const apiData = await fetchWithRetries(apiUrl);
 
-    // Enviar el audio como archivo (documento)
     const audioMessage = {
       document: { url: apiData.download.url },
       mimetype: "audio/mpeg",
       fileName: `${video.title}.mp3`,
-      caption: `🎶 *Audio de:* ${video.title}`,
+      caption: `\`\`\`◜YouTube - MP3◞\`\`\`\n\n*${video.title}*`,
     };
 
     await conn.sendMessage(m.chat, audioMessage, { quoted: m });
@@ -59,10 +53,11 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     // Reaccionar al mensaje original con ❌
     await conn.sendMessage(m.chat, { react: { text: "❌", key: m.key } });
+    await conn.reply(m.chat, `No se pudo obtener el audio. Intenta con otro título o más tarde.`, m);
   }
 };
 
-// Cambia el Regex para que reconozca ".playdoc"
+// Comando
 handler.command = ['ytmp3doc'];
 handler.help = ['ytmp3doc'];
 handler.tags = ['descargas'];
