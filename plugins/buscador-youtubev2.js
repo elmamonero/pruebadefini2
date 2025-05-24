@@ -1,68 +1,41 @@
-import { prepareWAMessageMedia, generateWAMessageFromContent } from '@whiskeysockets/baileys';
-import yts from 'yt-search';
+import yts from 'yt-search'
 
-const handler = async (m, { conn, usedPrefix, command, text }) => {
-  if (!text) throw `*🌴 Por favor, ingresa un texto para buscar en Youtube.*\n> *\`Ejemplo:\`* ${usedPrefix + command} Bing Bang`;
+var handler = async (m, { text, conn, args, command, usedPrefix }) => {
+    if (!text) return conn.reply(m.chat, `*[ 🔎 ] Por favor, ingresa una búsqueda de YouTube.*`, m);
 
-  const results = await yts(text);
-  const videos = results.videos.slice(0, 10);
+    try {
+        conn.reply(m.chat, wait, fkontak, m);
 
-  if (!videos.length) throw '⚠️ *No se encontraron resultados para tu búsqueda.*';
+        let results = await yts(text);
+        let tes = results.all;
 
-  const randomVideo = videos[Math.floor(Math.random() * videos.length)];
-
-  const media = await prepareWAMessageMedia(
-    { image: { url: randomVideo.thumbnail } },
-    { upload: conn.waUploadToServer }
-  );
-
-  const interactiveMessage = {
-    body: {
-      text: `> *Resultados:* \`${videos.length}\`\n\n*${randomVideo.title}*\n\n≡ 🌵 *\`Autor:\`* ${randomVideo.author.name}\n≡ 🍁 *\`Vistas:\`* ${randomVideo.views.toLocaleString()}\n≡ 🌿 *\`Enlace:\`* ${randomVideo.url}`
-    },
-    footer: { text: 'sʜᴀᴅᴏᴡ ᴜʟᴛʀᴀ ᴍᴅ' },
-    header: {
-      title: '```乂 YOUTUBE - SEARCH```',
-      hasMediaAttachment: true,
-      imageMessage: media.imageMessage
-    },
-    nativeFlowMessage: {
-      buttons: [
-        {
-          name: 'single_select',
-          buttonParamsJson: JSON.stringify({
-            title: 'Opciones de descarga',
-            sections: videos.map(video => ({
-              title: `${video.title}`,
-              rows: [
-                {
-                  header: video.title,
-                  title: video.author.name,
-                  description: `𝖣𝖾𝗌𝖼𝖺𝗋𝗀𝖺𝗋 𝖺𝗎𝖽𝗂𝗈 | Duración: ${video.timestamp}`,
-                  id: `.ytmp3 ${video.url}`
-                },
-                {
-                  header: video.title,
-                  title: video.author.name,
-                  description: `𝖣𝖾𝗌𝖼𝖺𝗋𝗀𝖺𝗋 𝗏𝗂𝖽𝖾𝗈 | Duración: ${video.timestamp}`,
-                  id: `.ytmp4doc ${video.url}`
-                }
-              ]
-            }))
-          })
+        if (!tes || tes.length === 0) {
+            return conn.reply(m.chat, `No se encontraron resultados para *${text}*`, m);
         }
-      ],
-      messageParamsJson: ''
+
+        // Formateamos los resultados obtenidos
+        let teks = tes.map(v => {
+            switch (v.type) {
+                case 'video':
+                    return `*「🌷」Resultados de la búsqueda para:*\n<${text}>\n\n☕ *Título:* ${v.title}\n📡 *Canal* ${v.author.name}\n*🕝 Duración:* ${v.timestamp}\n📆 *Subido:* ${v.ago}\n👀 *Vistas:* ${v.views}\n🔗 *Enlace* ${v.url}`;
+            }
+        }).filter(v => v).join('\n\n*┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n\n');
+
+        // Si existen resultados, enviamos el primero junto con la información
+        if (tes.length > 0) {
+            conn.sendFile(m.chat, tes[0].thumbnail, 'yts.jpeg', teks, m);
+        }
+
+    } catch (error) {
+        console.error(error);
+        conn.reply(m.chat, 'Ocurrió un error al realizar la búsqueda. Intenta de nuevo más tarde.', m);
     }
-  };
+}
 
-  const userJid = conn?.user?.jid || m.key.participant || m.chat;
-  const msg = generateWAMessageFromContent(m.chat, { interactiveMessage }, { userJid, quoted: m });
-  conn.relayMessage(m.chat, msg.message, { messageId: msg.key.id });
-};
+handler.help = ['ytsearch']
+handler.tags = ['buscador']
+handler.command = ['youtubesearch2', 'ytsearch2', 'yts2']
 
-handler.help = ['yts <texto>'];
-handler.tags = ['buscador'];
-handler.command = /^(yts|ytsearch)$/i;
+handler.register = true
 
-export default handler;
+export default handler
