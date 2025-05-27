@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-const xgc = '✨'; // Define aquí el emoji o texto que prefieras
+const xgc = '✨'; // Emoji o símbolo que quieras usar
 
 let mutedUsers = new Set();
 
@@ -35,14 +35,16 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     }
     mutedUsers.add(user);
     guardarMuteos();
-    conn.reply(m.chat, `*🔇 El usuario* *@${user.split('@')[0]}* *fue muteado.*\n> *Sus mensajes serán eliminados.*`, m);
+    // Enviar mensaje mencionando al usuario
+    return conn.reply(m.chat, `*🔇 El usuario* *@${user.split('@')[0]}* *fue muteado.*\n> *Sus mensajes serán eliminados.*`, m, { mentions: [user] });
   } else if (command === "unmute") {
     if (!mutedUsers.has(user)) {
       return conn.reply(m.chat, `*🔊 El usuario* *@${user.split('@')[0]}* *no está muteado.*`, m, { mentions: [user] });
     }
     mutedUsers.delete(user);
     guardarMuteos();
-    conn.reply(m.chat, `*🔊 El usuario* *@${user.split('@')[0]}* *fue desmuteado.*\n> *Sus mensajes ya no serán eliminados.*`, m);
+    // Enviar mensaje mencionando al usuario
+    return conn.reply(m.chat, `*🔊 El usuario* *@${user.split('@')[0]}* *fue desmuteado.*\n> *Sus mensajes ya no serán eliminados.*`, m, { mentions: [user] });
   }
 };
 
